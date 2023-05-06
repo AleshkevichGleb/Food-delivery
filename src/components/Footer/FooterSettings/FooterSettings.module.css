@@ -1,0 +1,23 @@
+.footer__logoContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 214px;
+}
+
+.footer__rootsText {
+    color: #CFCFCF;
+    font-size: 12px;
+}
+
+.footer__settings {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.footer__settingsText {
+    text-decoration:underline;
+    color: #fff;
+    font-size: 14px;
+}

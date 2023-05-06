@@ -1,0 +1,67 @@
+@import "../../../assets/fonts/fonts.css";
+
+.preview {
+    background-image: url('../../../assets/images/home-preview.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    height: 484px;
+    z-index: -2;
+    pointer-events: none;
+}
+
+.preview::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: linear-gradient(90deg, #232222 0, rgba(68, 64, 63, 0) 100%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.preview__container {
+    max-width: 1440px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    height: 100%;
+} 
+
+.preview__content {
+    margin-left: 100px;
+    transform: rotate(-8.37deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.preview__title {
+    font-weight: 400;
+    font-size: 67px;
+    letter-spacing: 0.5px;
+    font-family: "Zint", sans-serif;
+    text-shadow: black 10px 2px 10px, black 2px 10px 0, 
+    black 10px 3px 2px, rgb(203, 198, 198) 4px 5px 0, 
+    rgb(214, 204, 204) 10px 5px 0;
+}
+
+.button {
+    margin-top: 30px;
+    pointer-events: all;
+    position: relative;
+    z-index: 100;
+    width: 177px;
+    height: 27px;
+    background: linear-gradient(114.93deg, #618967 5.11%, #72A479 94%);
+    width: 230px;
+    height: 35.8px;
+    font-size: 25px;
+    color: #fff;
+    font-family: "Zint", sans-serif;
+    box-shadow: black 2px 2px 10px 4px; 
+}

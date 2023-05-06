@@ -1,0 +1,35 @@
+.contactBlock {
+    display: flex;
+    gap: 15px;
+}
+
+.phone {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(114.93deg, #618967 5.11%, #72A479 94%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contactBlock__text {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.contactBlock__title {
+    color:#CFCFCF;
+    font-size: 16px;
+}
+
+.contactBlock__phoneNumber {
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+
+
