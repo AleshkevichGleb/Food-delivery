@@ -13,16 +13,18 @@ const ProductsItems = ({data}) => {
                 {data.map(dish => 
                     <div className={styles.item}>
                         <img src={duck} alt="" />
-                        <div>
-                            <h3>{dish.title}</h3>
-                            <span>Вес: {dish.weight}г.</span>
-                        </div>
-                        <span>{dish.description}</span>
-                        <div>
-                            <span className={styles.item__price}>{dish.price} ₽</span>
-                            <ToCartButton>
-                                В корзину
-                            </ToCartButton>
+                        <div className={styles.item__container}>
+                            <div className={styles.item__titleInfo}>
+                                <h3 className={styles.item__title}>{dish.title}</h3>
+                                <span className={styles.item__weight}>Вес: {dish.weight}г.</span>
+                            </div>
+                            <span className={styles.item__description}>{dish.description}</span>
+                            <div className={styles.item__buyBlock}>
+                                <span className={styles.item__price}>{dish.price} ₽</span>
+                                <ToCartButton>
+                                    В корзину
+                                </ToCartButton>
+                            </div>
                         </div>
                     </div>
                     )}
