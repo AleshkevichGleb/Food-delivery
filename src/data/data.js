@@ -1,5 +1,43 @@
-export const typesEat = ['Холодные закуски', 'Горячие закуски', 'Мясные блюда', 'Супы',
-                         'Рыбные блюда', 'Гриль меню', 'Фирменные блюда', 'Напитки'];
+import duck from '../assets/images/duck.png';
+import goose from '../assets/images/goose.png';
+import turkey from '../assets/images/turkey.png';
+import lamb from '../assets/images/lamb.png';
+
+
+export const typesEat = [
+    {
+        link:'cold',
+        text:'ХОЛОДНЫЕ ЗАКУСКИ'
+    },
+    {
+        link: 'hot',
+        text: 'ГОРЯЧИЕ ЗАКУСКИ'
+    },
+    {
+        link: 'meat',
+        text: 'МЯСНЫЕ БЛЮДА'
+    },
+    {
+        link: 'soup',
+        text: 'СУПЫ'
+    },
+    {
+        link: 'fish',
+        text: 'РЫБНЫЕ БЛЮДА',
+    },
+    {
+        link: 'grill',
+        text: 'ГРИЛЬ МЕНЮ'
+    },
+    {
+        link:'specialty-dishes',
+        text:'ФИРМЕННЫЕ БЛЮДА'
+    },
+    {
+        link: 'drinks',
+        text: 'НАПИТКИ'
+    },
+]
 
 export const data = [
     {
@@ -7,28 +45,32 @@ export const data = [
         title: "Ягненок",
         description:'Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком',
         price: 620,
-        weight: 225
+        weight: 225,
+        image: lamb
     },
     {
         type: 'ХОЛОДНЫЕ ЗАКУСКИ',
         title: "Индейка",
         description:'Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком',
-        price: 620,
-        weight: 225
+        price: 560,
+        weight: 225,
+        image: turkey
     },
     {
         type: 'ХОЛОДНЫЕ ЗАКУСКИ',
         title: "Гусь",
         description:'Фаршированный яблоками',
-        price: 620,
-        weight: 225
+        price: 870,
+        weight: 225,
+        image: goose
     },
     {
         type: 'ХОЛОДНЫЕ ЗАКУСКИ',
         title: "Утка",
         description:'Фаршированная рисом, курагой и айвой',
-        price: 620,
-        weight: 225
+        price: 610,
+        weight: 225,
+        image: duck
     },
 
 
@@ -36,87 +78,99 @@ export const data = [
         type: 'ГОРЯЧИЕ ЗАКУСКИ',
         title: "Ягненок",
         description:'Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком',
-        price: 620,
-        weight: 225
+        price: 600,
+        weight: 225,
+        image: lamb
     },
     {
         type: 'ГОРЯЧИЕ ЗАКУСКИ',
         title: "Индейка",
         description:'Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком',
-        price: 620,
-        weight: 225
+        price: 720,
+        weight: 225,
+        image: turkey
     },
     {
         type: 'ГОРЯЧИЕ ЗАКУСКИ',
         title: "Гусь",
         description:'Фаршированный яблоками',
-        price: 620,
-        weight: 225
+        price: 520,
+        weight: 225,
+        image: goose
     },
     {
         type: 'ГОРЯЧИЕ ЗАКУСКИ',
         title: "Утка",
         description:'Фаршированная рисом, курагой и айвой',
-        price: 620,
-        weight: 225
+        price: 550,
+        weight: 225,
+        image: duck
     },
 
     {
         type: 'МЯСНЫЕ БЛЮДА',
         title: "Ягненок",
         description:'Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком',
-        price: 620,
-        weight: 225
+        price: 640,
+        weight: 225,
+        image: lamb
     },
     {
         type: 'МЯСНЫЕ БЛЮДА',
         title: "Индейка",
         description:'Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком',
-        price: 620,
-        weight: 225
+        price: 860,
+        weight: 225,
+        image: turkey
     },
     {
         type: 'МЯСНЫЕ БЛЮДА',
         title: "Гусь",
         description:'Фаршированный яблоками',
-        price: 620,
-        weight: 225
+        price: 450,
+        weight: 225,
+        image: goose
     },
     {
         type: 'МЯСНЫЕ БЛЮДА',
         title: "Утка",
         description:'Фаршированная рисом, курагой и айвой',
-        price: 620,
-        weight: 225
+        price: 540,
+        weight: 225,
+        image: duck
     },
 
     {
         type: 'СУПЫ',
         title: "Ягненок",
         description:'Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком',
-        price: 620,
-        weight: 225
+        price: 615,
+        weight: 225,
+        image: lamb
     },
     {
         type: 'СУПЫ',
         title: "Индейка",
         description:'Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком',
-        price: 620,
-        weight: 225
+        price: 555,
+        weight: 225,
+        image: turkey
     },
     {
         type: 'СУПЫ',
         title: "Гусь",
         description:'Фаршированный яблоками',
-        price: 620,
-        weight: 225
+        price: 770,
+        weight: 225,
+        image: goose
     },
     {
         type: 'СУПЫ',
         title: "Утка",
         description:'Фаршированная рисом, курагой и айвой',
-        price: 620,
-        weight: 225
+        price: 670,
+        weight: 225,
+        image: duck
     },
 
 
@@ -124,29 +178,33 @@ export const data = [
         type: 'РЫБНЫЕ БЛЮДА',
         title: "Ягненок",
         description:'Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком',
-        price: 620,
-        weight: 225
+        price: 720,
+        weight: 225,
+        image: lamb
     },
     {
         type: 'РЫБНЫЕ БЛЮДА',
         title: "Индейка",
         description:'Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком',
-        price: 620,
-        weight: 225
+        price: 600,
+        weight: 225,
+        image: turkey
     },
     {
         type: 'РЫБНЫЕ БЛЮДА',
         title: "Гусь",
         description:'Фаршированный яблоками',
-        price: 620,
-        weight: 225
+        price: 850,
+        weight: 225,
+        image: goose
     },
     {
         type: 'РЫБНЫЕ БЛЮДА',
         title: "Утка",
         description:'Фаршированная рисом, курагой и айвой',
-        price: 620,
-        weight: 225
+        price: 450,
+        weight: 225,
+        image: duck
     },
 
 
@@ -154,86 +212,99 @@ export const data = [
         type: 'ГРИЛЬ МЕНЮ',
         title: "Ягненок",
         description:'Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком',
-        price: 620,
-        weight: 225
+        price: 990,
+        weight: 225,
+        image: lamb
     },
     {
         type: 'ГРИЛЬ МЕНЮ',
         title: "Индейка",
         description:'Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком',
-        price: 620,
-        weight: 225
+        price: 920,
+        weight: 225,
+        image: turkey
     },
     {
         type: 'ГРИЛЬ МЕНЮ',
         title: "Гусь",
         description:'Фаршированный яблоками',
-        price: 620,
-        weight: 225
+        price: 820,
+        weight: 225,
+        image: goose
     },
     {
         type: 'ГРИЛЬ МЕНЮ',
         title: "Утка",
         description:'Фаршированная рисом, курагой и айвой',
-        price: 620,
-        weight: 225
+        price: 520,
+        weight: 225,
+        image: duck
     },
 
     {
         type: 'ФИРМЕННЫЕ БЛЮДА',
         title: "Ягненок",
         description:'Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком',
-        price: 620,
-        weight: 225
+        price: 670,
+        weight: 225,
+        image: lamb
     },
     {
         type: 'ФИРМЕННЫЕ БЛЮДА',
         title: "Индейка",
         description:'Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком',
-        price: 620,
-        weight: 225
+        price: 570,
+        weight: 225,
+        image: turkey
     },
     {
         type: 'ФИРМЕННЫЕ БЛЮДА',
         title: "Гусь",
         description:'Фаршированный яблоками',
-        price: 620,
-        weight: 225
+        price: 630,
+        weight: 225,
+        image: goose
     },
     {
         type: 'ФИРМЕННЫЕ БЛЮДА',
         title: "Утка",
         description:'Фаршированная рисом, курагой и айвой',
         price: 620,
-        weight: 225
+        weight: 225,
+        image: duck
     },
 
     {
         type: 'НАПИТКИ',
         title: "Ягненок",
         description:'Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком',
-        price: 620,
-        weight: 225
+        price: 670,
+        weight: 225,
+        image: lamb
     },
     {
         type: 'НАПИТКИ',
         title: "Индейка",
         description:'Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком',
-        price: 620,
-        weight: 225
+        price: 689,
+        weight: 225,
+        image: turkey
     },
     {
         type: 'НАПИТКИ',
         title: "Гусь",
         description:'Фаршированный яблоками',
-        price: 620,
-        weight: 225
+        price: 640,
+        weight: 225,
+        image: goose
     },
     {
         type: 'НАПИТКИ',
         title: "Кока кола",
         description:'Фаршированная рисом, курагой и айвой',
         price: 620,
-        weight: 225
+        weight: 225,
+        image: duck
     },
+    
 ];

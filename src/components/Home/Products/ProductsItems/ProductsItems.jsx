@@ -1,9 +1,8 @@
 import styles from "./ProductsItems.module.css";
-import ProductsTitle from "../ProductsTitle/ProductsTitle";
-import duck from "../../../../assets/images/duck.png";
-import ToCartButton from "../../../UI/toCartButton/ToCartButton";
+import cartImage from "../../../UI/toCartButton/buy.svg";
 
 const ProductsItems = ({data}) => {
+    console.log(data);
     return(
         <div className={styles.productsItems}>
             <div className={styles.productsItems__titleContainer}>
@@ -12,7 +11,7 @@ const ProductsItems = ({data}) => {
             <div className={styles.itemsContainer}>
                 {data.map(dish => 
                     <div className={styles.item}>
-                        <img src={duck} alt="" />
+                        <img src={dish.image} alt="sdfd" />
                         <div className={styles.item__container}>
                             <div className={styles.item__titleInfo}>
                                 <h3 className={styles.item__title}>{dish.title}</h3>
@@ -21,9 +20,13 @@ const ProductsItems = ({data}) => {
                             <span className={styles.item__description}>{dish.description}</span>
                             <div className={styles.item__buyBlock}>
                                 <span className={styles.item__price}>{dish.price} ₽</span>
-                                <ToCartButton>
+                                {/* <ToCartButton>
                                     В корзину
-                                </ToCartButton>
+                                </ToCartButton> */}
+                                <button className={styles.button} onClick={() => alert(1)}>
+                                    <span>В корзину</span>
+                                    <img src={cartImage} alt="buy" />
+                                </button>
                             </div>
                         </div>
                     </div>
