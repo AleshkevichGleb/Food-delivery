@@ -4,7 +4,7 @@ import Input from "../UI/input/Input";
 import Contact from "./Contact/Contact";
 import Cart from "./Cart/Cart";
 
-const Header = () => {
+const Header = ({fullCount}) => {
     return(
         <div className={styles.header}>
             <div className={styles.header__container}>
@@ -13,7 +13,7 @@ const Header = () => {
                     <Input/>
                     <Contact text = "+7 (917) 510-57-59"/>
                 </div>
-                <Cart items = {3}/>
+                <Cart items = {fullCount}/>
             </div>
         </div>
     )

@@ -6,7 +6,6 @@ const Home = () => {
         <div className="main">
             <HomePreview/>
             <Products/>
-            
         </div>
     )
 }

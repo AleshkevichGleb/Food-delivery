@@ -3,13 +3,9 @@ import Header from "../Header/Header"
 
 const Cart = () => {
     return(
-        <>
-        <Header/>
         <div className="main">
             <div>Cart</div>
         </div>
-        <Footer/>
-        </>
     )
 }
 

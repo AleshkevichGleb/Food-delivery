@@ -1,0 +1,33 @@
+.caffe {
+
+    height: 610px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #403C3B;
+}
+
+.caffe__container {
+    /* background: linear-gradient(90deg, #232222 0, rgba(68, 64, 63, 0) 100%); */
+    background: linear-gradient(90deg,  rgba(68, 64, 63, 0) 100%), #232222 0;
+    margin: 0 auto;
+    width: 1363px;
+    height: 610px;
+    background-image: url('../../../assets/images/MaskGroup.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 0;
+}
+
+.caffe__container::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: linear-gradient(90deg, #161616 0, rgba(110, 35, 35, 0) 100%);
+    z-index: -1;
+    pointer-events: none;
+}
