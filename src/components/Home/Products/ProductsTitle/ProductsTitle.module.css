@@ -3,8 +3,10 @@
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    padding: 29px 0;
+    gap: 10px;
+    padding: 29px 10px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    flex-wrap: wrap;
 }
 
 .nav__item {
@@ -18,7 +20,6 @@
 
 .nav__item_active {
     position: relative;
-    /* text-decoration: underline; */
 }
 
 .nav__item_active::after {
@@ -51,4 +52,16 @@
 .nav__item:hover::before {
     transition: .6s;
     width: 100%;
+}
+
+@media (max-width: 1204px) {
+    .nav__item {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 1044px) {
+    .nav__item {
+        padding: 5px;
+    }
 }

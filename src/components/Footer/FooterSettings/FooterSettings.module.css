@@ -21,3 +21,10 @@
     color: #fff;
     font-size: 14px;
 }
+
+@media (max-width: 843px) {
+    .footer__logoContainer {
+        align-items: center;
+        text-align: center;
+    }
+}

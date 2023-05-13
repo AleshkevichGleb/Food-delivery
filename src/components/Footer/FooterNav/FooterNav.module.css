@@ -12,3 +12,26 @@
 .nav__item:hover {
     font-weight: 700;
 }
+
+@media (max-width: 1288px) {
+    .nav {
+        padding-left: 0px;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+}
+
+
+@media (max-width: 843px) {
+    .nav {
+        margin-top: 15px;
+        gap: 15px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav__item {
+        font-size: 24px;
+        color:#fff;
+    }
+}

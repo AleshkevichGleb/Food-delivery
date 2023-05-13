@@ -1,0 +1,7 @@
+.weatherContainer {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    font-weight: 700;
+    gap: 10px;
+}

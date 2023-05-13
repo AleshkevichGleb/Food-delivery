@@ -36,4 +36,34 @@ h1 {
 
 .main {
     flex: 1 1 auto;
+    margin-top: 100px;
+}
+
+@media (max-width: 843px) {
+
+    .main {
+        margin-top: 130px;
+    }
+    
+
+    .burger__menu {
+        transform: translate(-100%, 0);
+        position: fixed; 
+        background-color:#403C3B;   
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: .2s linear;
+    }
+
+    .burger__menu.active {
+        transform: translate(0px, 0px);
+    }
+
 }

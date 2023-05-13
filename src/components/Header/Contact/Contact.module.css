@@ -1,4 +1,5 @@
 .contactBlock {
+    width: 145px;
     display: flex;
     gap: 15px;
 }
@@ -28,6 +29,22 @@
     color: #FFFFFF;
     font-size: 12px;
     font-weight: 700;
+}
+
+@media (max-width: 843px) {
+    .contactBlock {
+        width: 180px;
+        display: flex;
+        gap: 15px;
+    }
+
+    .contactBlock__title {
+        font-size: 20px;
+    }
+
+    .contactBlock__phoneNumber {
+        font-size: 16px;
+    }
 }
 
 
