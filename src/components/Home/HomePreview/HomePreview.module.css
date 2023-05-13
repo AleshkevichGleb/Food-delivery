@@ -69,6 +69,7 @@
 @media(max-width: 843px) {
     .preview {
        background-position: 30% 50%;
+       height: 350px;
     }
     .preview__content {
         margin: 0 auto;
@@ -76,6 +77,13 @@
 
     .preview__title {
         font-size: 35px;
+    }
+    
+}
+
+@media(max-width: 400px) {
+    .preview__title {
+        font-size: 28px;
     }
     
 }

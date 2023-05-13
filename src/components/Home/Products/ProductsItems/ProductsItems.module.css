@@ -130,10 +130,42 @@
     
 }
 
-@media (max-width: 500px) {
+@media (max-width: 698px) {
+.productsItems__titleContainer {
+    margin: 40px 0;
+    max-width: 1440px;
+}
+
+.itemsContainer {
+    gap: 10px;
+    padding: 30px 10px;
+}
+
+.item {
+    width: 49%;
+    height: 100%;
+}
+
+.item__image {
+    width: 100%;
+}
+
+}
+
+@media (max-width: 524px) {
     .productsItems__title {
     padding-left: 20px;
     font-size: 26px;
+    }
+
+    .itemsContainer {
+        gap: 20px;
+        padding: 30px 10px;
+    }
+
+    .item {
+        width: 98%;
+        height: 100%;
     }
     
 }
