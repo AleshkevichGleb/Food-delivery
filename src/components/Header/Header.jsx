@@ -26,7 +26,7 @@ const Header = ({fullCount}) => {
                         <FooterNav/>
                     </div>
                 </div>
-                <Cart active = {active} items = {fullCount}/>
+                <Cart items = {4}/>
             </div>
         </div>
     )

@@ -1,0 +1,2 @@
+export const INCREASE__PRICE = 'INCREASE PRICE';
+export const DECREASE__PRICE = 'DECREASE PRICE';

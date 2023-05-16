@@ -10,7 +10,6 @@ import Delivery from "./components/Delivery/Delivery";
 import Promotion from "./components/Promotion/Promotion";
 
 function App() {
-  const [fullCountofProducts, setfullCountofProducts] = useState(0);
   const [weather, setWeather] = useState({});
 
   useEffect(() => {
@@ -31,11 +30,11 @@ function App() {
 
   return (
     <>
-        <Header fullCount = {fullCountofProducts}/>
+        <Header/>
         {!state && <Home/>}
         <Routes>
-            <Route path = '/' element = {<ProductsItems fullCount = {fullCountofProducts} setfullCount = {setfullCountofProducts}/>}/>
-            <Route path = '/:url' element = {<ProductsItems fullCount = {fullCountofProducts} setfullCount = {setfullCountofProducts}/>}/>
+            <Route path = '/' element = {<ProductsItems/>}/>
+            <Route path = '/:url' element = {<ProductsItems/>}/>
             <Route path = '/cart' element = {<Cart/>}/>
             <Route path = '/delivery' element = {<Delivery/>}/>
             <Route path = '/promotion' element = {<Promotion/>}/>

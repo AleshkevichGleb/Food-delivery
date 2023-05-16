@@ -1,30 +1,21 @@
 import styles from "./ToCartElement.module.css";
 import cartImage from "../../../../../assets/images/buy.svg";
 import { useState } from "react";
+import { DECREASE__PRICE, INCREASE__PRICE } from "../../../../../reducer/types";
 
-const ToCartElement = ({productPrice, fullCount, setfullCount}) => {
-    const [countOfProduct, setCountOfProduct] = useState(1);
-    const [priceOfProduct, setPriceOfProduct] = useState(productPrice);
-    
+const ToCartElement = ({productPrice, cartCount, cartPrice, dispatch, id, category}) => {
     const [isVisible, setIsVisible] = useState(false);
 
-    const basketData = [];
 
-    const incrementCountOfProduct = () => {
-        setCountOfProduct(countOfProduct + 1);
-        setPriceOfProduct(priceOfProduct + productPrice);
-        setfullCount(fullCount + 1)
-
+    const incrementCountOfProduct = ({currentTarget}) => {
+        dispatch({type: INCREASE__PRICE, category: category, id: currentTarget.id})
     }
 
-    const decrementCountOfProduct = () => {
-        if(countOfProduct === 1) {
-            setIsVisible(!isVisible);  
-            setfullCount(fullCount - 1)
-        } else {
-            setPriceOfProduct(priceOfProduct - productPrice);
-            setCountOfProduct(countOfProduct - 1);
-            setfullCount(fullCount - 1)
+    const decrementCountOfProduct = ({currentTarget}) => {
+        if(cartCount === 1) {
+            setIsVisible(!isVisible); 
+        } else {    
+            dispatch({type: DECREASE__PRICE, category: category, id: currentTarget.id })
         } 
 
     }
@@ -35,29 +26,30 @@ const ToCartElement = ({productPrice, fullCount, setfullCount}) => {
         {isVisible
                             
             ?   <div className={styles.item__changeContainer}> 
-                    <div className= {styles.item__countCart}>{countOfProduct}</div>
+                    <div className= {styles.item__countCart}>{cartCount}</div>
                     <button 
                     className={[styles.button, styles.buttonChangePrice].join(' ')}
                     onClick = {decrementCountOfProduct}
+                    id = {id + 99}
                     >
                         -
                     </button>
-                    <span className={styles.item__price}>{priceOfProduct} ₽</span>
+                    <span className={styles.item__price}>{cartPrice} ₽</span>
                     <button 
                     className={[styles.button, styles.buttonChangePrice].join(' ')}
                     onClick={incrementCountOfProduct}
+                    id = {id}
                     >
                         +
                     </button>
                 </div>
 
             :   <div className={styles.item__buyBlock}>
-                    <span className={styles.item__price}>{priceOfProduct} ₽</span>
-                    <button className={styles.button} 
+                    <span className={styles.item__price}>{productPrice} ₽</span>
+                    <button className={styles.button} id = {id}
                     onClick={() => 
                         {
                             setIsVisible(!isVisible); 
-                            setfullCount(fullCount + 1)
                         }}
                     >
                         <span>В корзину</span>

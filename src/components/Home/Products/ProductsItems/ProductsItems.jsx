@@ -1,14 +1,18 @@
 import styles from "./ProductsItems.module.css";
 import { useParams } from "react-router-dom";
 import { typesEat } from "../../../../data/data";
-import { useState } from "react";
+import { useReducer, useState } from "react";
 import OurCaffe from "../../OurCaffe/OurCaffe";
 import ToCartElement from "./ToCartElement/ToCartElement";
+import { productReducer } from "../../../../reducer/productReducer";
+import { initialState } from "../../../../reducer/initialState";
 
-const ProductsItems = ({fullCount, setfullCount}) => {
+const ProductsItems = () => {
+    const [state, dispatch] = useReducer(productReducer, initialState);
+
     const {url} = useParams();
     
-    const {title, products, link} = typesEat.find(type => {
+    const {title, products, link} = state.find(type => {
         if(url === undefined) {
             return type.link === 'cold'
         }
@@ -33,7 +37,13 @@ const ProductsItems = ({fullCount, setfullCount}) => {
                             </div>
                             <span className={styles.item__description}>{product.description}</span>
                             
-                            <ToCartElement fullCount = {fullCount} setfullCount = {setfullCount} productPrice = {product.price}/>
+                            <ToCartElement 
+                            dispatch = {dispatch} 
+                            cartPrice = {product.cartPrice}
+                            cartCount={product.cartCount}
+                            productPrice = {product.price}
+                            category={link}
+                            id = {product.id}/>
 
                         </div>
                     </div>
