@@ -1,25 +1,25 @@
 import styles from "./ToCartElement.module.css";
 import cartImage from "../../../../../assets/images/buy.svg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { DECREASE__PRICE, INCREASE__PRICE } from "../../../../../reducer/types";
 
 const ToCartElement = ({productPrice, cartCount, cartPrice, dispatch, id, category}) => {
-    const [isVisible, setIsVisible] = useState(false);
 
+    const [isVisible, setIsVisible] = useState(cartPrice >= productPrice ? true : false);
 
     const incrementCountOfProduct = ({currentTarget}) => {
-        dispatch({type: INCREASE__PRICE, category: category, id: currentTarget.id})
+        dispatch({type: INCREASE__PRICE, category: category, id: currentTarget.id});
     }
 
     const decrementCountOfProduct = ({currentTarget}) => {
         if(cartCount === 1) {
             setIsVisible(!isVisible); 
+            dispatch({type: DECREASE__PRICE, category: category, id: currentTarget.id });
         } else {    
-            dispatch({type: DECREASE__PRICE, category: category, id: currentTarget.id })
+            dispatch({type: DECREASE__PRICE, category: category, id: currentTarget.id });
         } 
 
     }
-
 
     return(
         <>
@@ -47,10 +47,11 @@ const ToCartElement = ({productPrice, cartCount, cartPrice, dispatch, id, catego
             :   <div className={styles.item__buyBlock}>
                     <span className={styles.item__price}>{productPrice} ₽</span>
                     <button className={styles.button} id = {id}
-                    onClick={() => 
-                        {
-                            setIsVisible(!isVisible); 
-                        }}
+                    onClick={(event) => {
+                        incrementCountOfProduct(event);
+                        setIsVisible(!isVisible);
+                        } 
+                    }
                     >
                         <span>В корзину</span>
                         <img src={cartImage} alt="buy" />
