@@ -1,17 +1,17 @@
 import { Routes, Route, useLocation} from "react-router-dom";
 import Header from "./components/Header/Header";
 import "./index.css";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useReducer} from "react";
 import Cart from "./components/CartMain/Cart";
 import Home from "./components/Home/Home";
 import Footer from "./components/Footer/Footer";
 import ProductsItems from "./components/Home/Products/ProductsItems/ProductsItems";
 import Delivery from "./components/Delivery/Delivery";
 import Promotion from "./components/Promotion/Promotion";
+import OrderPage from "./components/OrderPage/OrderPage";
 
 function App() {
   const [weather, setWeather] = useState({});
-
   useEffect(() => {
     fetch("https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&current_weather=true&hourly=temperature_2m,relativehumidity_2m,windspeed_10m")
       .then((response) => response.json())
@@ -38,6 +38,7 @@ function App() {
             <Route path = '/cart' element = {<Cart/>}/>
             <Route path = '/delivery' element = {<Delivery/>}/>
             <Route path = '/promotion' element = {<Promotion/>}/>
+            <Route path = '/order' element = {<OrderPage/>}/>
         </Routes>
         <Footer weather = {weather}/>
     </>

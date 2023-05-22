@@ -1,0 +1,36 @@
+.form__group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+
+    .underTitle {
+        padding-top: 30px;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+    .select {
+        width: 363px;
+        height: 60px;
+        background-color: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: #fff;
+        border-radius: 10px;
+        outline: none;
+        padding-left: 20px;
+        font-size: 16px;
+
+        .option {
+            width: 363px;
+            height: 60px;
+            background-color: #504B4A;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border-radius: 10px;
+            outline: none;
+            font-size: 16px;
+        }
+    }
+}

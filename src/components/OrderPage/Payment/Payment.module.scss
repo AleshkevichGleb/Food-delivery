@@ -1,0 +1,111 @@
+
+.form {
+
+    &__block {
+        background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
+        padding: 30px;
+        border-radius: 10px;
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+
+        .input__group {
+            margin-top: 25px;
+            position: relative; 
+        
+            .input {
+                width: 173px;
+                height: 60px;
+                padding: 10px 15px;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: 10px;
+                background-color: transparent;
+                outline: none;
+                transition: .4s;
+                font-size: 16px;
+                color: #fff;
+        
+                &:focus {
+                    border: none;
+                    border-bottom:1.5px solid #59b068;
+                }
+        
+                &:focus ~ .label,
+                &:not(:placeholder-shown) ~ .label {
+                    top: -14px;
+                    left: 0px;
+                    font-size: 13px;
+                    color: #bccbbe;
+                    font-weight: 700;
+                }
+            }
+        
+            .label {
+                position: absolute;
+                top: 22px;
+                left: 15px;
+                transition: .4s;
+                color: #fff;
+            }
+        }
+
+        .form__subtitle {
+            color:#fff;
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .form__group {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+
+            .changeButtonsContainer {
+                width: 551px;
+                height: 60px;
+                border-radius: 10px;
+                border: 1px solid #72A479;
+                overflow: hidden;
+
+                .changeButton {
+                    width: 33.334%;
+                    height: 100%;
+                    background-color: transparent;
+                    border: none;
+                    font-weight: 700;
+                    color: #fff;
+                    font-size: 16px;
+                }
+                
+                .changeButton___checked {
+                    background: linear-gradient(114.93deg, #618967 5.11%, #72A479 94%);
+                }
+               
+            }
+
+            .timeBlock {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                &__text {
+                    color: #fff;
+                    font-size: 16px;
+                    font-weight: 700;
+
+                }
+
+            }
+
+            .underTitle {
+                padding-top: 30px;
+                color: #fff;
+                font-size: 16px;
+                font-weight: 700;
+            }
+        }
+
+    }
+}

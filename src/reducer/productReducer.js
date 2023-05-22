@@ -30,7 +30,6 @@ export const productReducer = (state, action) => {
             })
 
             return newState;
-            console.log(newState);
         }
 
         case DECREASE__PRICE: {

@@ -1,6 +1,6 @@
 import styles from "./ToCartElement.module.css";
 import cartImage from "../../../../../assets/images/buy.svg";
-import { useEffect, useState } from "react";
+import {useState } from "react";
 import { DECREASE__PRICE, INCREASE__PRICE } from "../../../../../reducer/types";
 
 const ToCartElement = ({productPrice, cartCount, cartPrice, dispatch, id, category}) => {
