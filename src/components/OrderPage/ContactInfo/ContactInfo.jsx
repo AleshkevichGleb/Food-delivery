@@ -15,6 +15,7 @@ const ContactInfo = ({data, handleData}) => {
                         className= {styles.input}
                         placeholder=" "
                         id = "name" 
+                        name = "name" 
                         type="text" 
                         value={data.name}
                         onChange={getHandleData}
@@ -28,6 +29,7 @@ const ContactInfo = ({data, handleData}) => {
                         placeholder=" "
                         type="tel" 
                         id = "phone"
+                        name = "phone"
                         value={data.phone}
                         onChange={getHandleData}
                     />

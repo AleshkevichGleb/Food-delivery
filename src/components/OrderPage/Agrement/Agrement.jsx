@@ -3,23 +3,24 @@ import styles from "./Agrement.module.scss";
 
 const Agrement = ({data, handleData}) => {
 
-    const getHandleData = (event) => {
-        handleData(event)
-    }
+    // const getHandleData = (event) => {
+    //     handleData(event)
+    // }
 
     const sendData = (event) => {
         event.preventDefault();
         console.log(data);
     }
+    console.log(data.agreement);
     return(
        <div className={styles.form__block}>
             <div className={styles.form__group}>
                 <input 
                     className={styles.checbox}
                     type="checkbox"
-                    id = "agrement"
-                    onChange={getHandleData}
-                    checked = {data.agrement === true}
+                    name = "agreement"
+                    onChange={handleData}
+                    checked = {data.agreement == true}
 
                 />
                 <span className={styles.text}>Я согласен на обработку моих перс. данных в соответствии с  

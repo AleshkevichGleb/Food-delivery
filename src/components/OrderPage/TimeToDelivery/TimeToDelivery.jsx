@@ -29,7 +29,7 @@ const TimeToDelivery = ({data, handleData}) => {
                 <div className={styles.changeButtonsContainer}>
                     <button 
                         className= {isToTime? styles.changeButton : [styles.changeButton, styles.changeButton___checked].join(' ')}
-                        id = "timeSoon"
+                        // id = "timeSoon"
                         value="soon"
                         name = "time"
                         onClick={(event) => {
@@ -41,7 +41,7 @@ const TimeToDelivery = ({data, handleData}) => {
                     </button>
                     <button 
                         className= {isToTime?[styles.changeButton, styles.changeButton___checked].join(' ') : styles.changeButton}
-                        id = "time"
+                        name = "time"
                         value="not indicated"
                         onClick={(event) => {
                             getHandleData(event)
@@ -70,9 +70,9 @@ const TimeToDelivery = ({data, handleData}) => {
                 <div className={styles.person__container}>
                     <span>Кол-во персон</span>
                     <div className={styles.persons__counter}>
-                        <button className={styles.button__minus} id = "persons" value={persons} onClick={decrementPersons}>-</button>
+                        <button className={styles.button__minus} name = "persons" value={persons} onClick={decrementPersons}>-</button>
                         <span className={styles.counter}>{persons}</span>
-                        <button className={styles.button__plus} id = "persons" value={persons} onClick={incrementPersons}>+</button>
+                        <button className={styles.button__plus} name = "persons" value={persons} onClick={incrementPersons}>+</button>
                     </div>
                 </div>
             </div>

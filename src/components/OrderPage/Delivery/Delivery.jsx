@@ -20,10 +20,10 @@ const Delivery = ({data, setData, handleData}) => {
                 <div className={styles.changeButtonsContainer}>
                     <button 
                         className= {isDelivery?[styles.changeButton, styles.changeButton___checked].join(' ') : styles.changeButton}
-                        id = "delivery"
+                        name = "delivery"
                         value="delivery"
                         onClick={(event) => {
-                            setData({...data, address:{...data.address={}}})
+                            // setData({...data, address:{...data.address={}}})
                             getHandleData(event)
                             setIsDelivery(true);
                         }}
@@ -32,13 +32,13 @@ const Delivery = ({data, setData, handleData}) => {
                     </button>
                     <button 
                         className= {isDelivery? styles.changeButton : [styles.changeButton, styles.changeButton___checked].join(' ')}
-                        id = "delivery"
+                        name = "delivery"
                         value="pickup"
                         onClick={(event) => {
-                            setData({...data, address:{...data.address={}}})
+                            // setData({...data, address:{...data.address={}}})
                             getHandleData(event)
                             setIsDelivery(false)
-                            setData({...data, address:{...data.address,streetRestaraunt: 'not indicated'}})
+                            // setData({...data, address:{...data.address,streetRestaraunt: 'not indicated'}})
                         }}
                     >
                         Самовывоз

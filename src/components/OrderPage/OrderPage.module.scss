@@ -65,3 +65,14 @@
         }
     }
 }
+
+@media (max-width: 859px) {
+    .form {
+
+        &__block {
+           width: 95%;
+           margin: 0 auto;
+
+        }
+    }
+}

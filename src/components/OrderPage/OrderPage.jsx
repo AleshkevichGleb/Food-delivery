@@ -19,22 +19,22 @@ const OrderPage = () => {
         },
         time: "soon",
         persons: 1,
-        recall: 'noRecall'
+        recall: 'noRecall',
+        agreement: false
     }
 
     const [data, setData] = useState(initialState);
     
     const handleData = (event) => {
         event.preventDefault();
-        let {id, value, name, type, checked} = event.target;
+        const {id, value, name, type, checked} = event.target;
 
-        id = name === 'time' || name === 'recall' ? name : id;
-        value = type === 'checkbox' ? checked : value
+        const setValue = type === 'checkbox' ? checked : value
 
         if(name === 'address' || name === 'payment') {
-            setData({...data, [name]:{...data[name], [id]: value}});
+            setData({...data, [name]:{...data[name], [id]: setValue}});
         }else {
-            setData({...data, [id]: value}) 
+            setData({...data, [name]: setValue}) 
         }
 
     }
@@ -45,9 +45,6 @@ const OrderPage = () => {
                 <div className={styles.order__container}>
                     <Link to = "/cart" state = {true}><span className={styles.back}>в корзину</span></Link>
                     <h1 className={styles.title}>Оформление заказа</h1>
-                    <pre style={{background:'#fff'}}>
-                        {JSON.stringify(data, null, 2)}
-                    </pre>
 
                     <form className={styles.form}>
                         <ContactInfo data = {data} setData = {setData} handleData = {handleData}/>
@@ -56,6 +53,10 @@ const OrderPage = () => {
                         <TimeToDelivery data = {data} handleData={handleData}/>
                         <Agrement data = {data} handleData = {handleData}/>
                     </form>
+
+                    <pre style={{background:'#fff'}}>
+                        {JSON.stringify(data, null, 2)}
+                    </pre>
 
                 </div>
             </div>

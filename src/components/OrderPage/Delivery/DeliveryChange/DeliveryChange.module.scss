@@ -64,3 +64,19 @@
     }
 }
 
+@media(max-width: 767.98px) {
+    .form__group {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    
+        .input__group {
+            width: 100%;
+        
+            .input {
+                width: 100%
+            }
+        }
+    }
+    
+}
