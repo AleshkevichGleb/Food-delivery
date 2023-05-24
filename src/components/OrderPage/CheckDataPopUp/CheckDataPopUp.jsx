@@ -1,6 +1,6 @@
 import styles from "./CheckDataPopUp.module.css";
 
-const CheckDataPopUp = ({image, setIsShowPopUp, title}) => {
+const CheckDataPopUp = ({image, setIsShowPopUp, title, text}) => {
     return (
         <div className={styles.container} onClick={() => setIsShowPopUp(false)}>
             <div className={styles.block}>
@@ -9,7 +9,7 @@ const CheckDataPopUp = ({image, setIsShowPopUp, title}) => {
                     <img src={image} alt="" />
                 </div>
                 <span className={styles.title}>{title}</span>
-                <span className={styles.text}>Ваш заказ отправлен на обработку</span>
+                <span className={styles.text}>{text}</span>
             </div>
         </div>
     )

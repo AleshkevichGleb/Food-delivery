@@ -6,9 +6,11 @@ import CheckDataPopUp from "../CheckDataPopUp/CheckDataPopUp";
 const Agrement = ({data, handleData, isDisabled, setIsShowPopUp}) => {
 
     const sendData = (event) => {
-        setIsShowPopUp(true)
         event.preventDefault();
-        console.log(data);
+        setIsShowPopUp(true)
+        if(!isDisabled) {
+            console.log(data);
+        }
     }
     
     return(
@@ -32,7 +34,7 @@ const Agrement = ({data, handleData, isDisabled, setIsShowPopUp}) => {
                 <button 
                     className={styles.button} 
                     type = "submit" 
-                    disabled = {isDisabled}
+                    // disabled = {isDisabled}
                     onClick={sendData}
                 >
                     Оформить заказ

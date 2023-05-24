@@ -11,6 +11,7 @@ import { useValidate } from "./useValidate/useValidate";
 import Title from "../../common/Title/Title";
 import CheckDataPopUp from "./CheckDataPopUp/CheckDataPopUp";
 import sendData from "../../assets/images/sendData.svg"
+import errorSendData from "../../assets/images/errorSendData.png"
 
 const OrderPage = () => {
     const initialState = {
@@ -45,7 +46,6 @@ const OrderPage = () => {
         data.name === '' || data.phone === '' || data.address.street === '' || data.payment.surrender_of_money === '' ||
         data.address.house === '' || data.address.streetRestaraunt === 'not indicated' || data.time === '';
 
-        console.log(show);
         setIsDisabled(show)
     }, [error, data.name, data.phone, data.address.street, data.address.house , 
         data.address.streetRestaraunt, data.time, data.payment.surrender_of_money])
@@ -65,15 +65,27 @@ const OrderPage = () => {
 
     }
 
-
     return(
         <>
         {isShowPopPup &&
-            <CheckDataPopUp 
-            image = {sendData} 
-            setIsShowPopUp = {setIsShowPopUp}
-            title = 'Спасибо!'
-            />
+            <>
+                {isDisabled 
+                ? <CheckDataPopUp 
+                  image = {errorSendData} 
+                  setIsShowPopUp = {setIsShowPopUp}
+                  title = 'Ошибка!'
+                  text='Пожалуйста, заполните все поля и провeрьте их на правильность'
+                  />
+                
+                : <CheckDataPopUp 
+                  image = {sendData} 
+                  setIsShowPopUp = {setIsShowPopUp}
+                  title = 'Спасибо!'
+                  text = 'Ваш заказ отправлен на обработку'
+                  />
+                }
+
+            </>
         }
         <div className="main">
             <div className={styles.orderPage}>
