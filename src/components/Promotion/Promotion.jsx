@@ -1,8 +1,11 @@
+import Title from "../../common/Title/Title";
 
 
 const Promotion = () => {
     return(
-        <div className="main">Promotion</div>
+        <div className="main">
+            <Title title='Акции'/>
+        </div>
     )
 }
 

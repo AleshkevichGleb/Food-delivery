@@ -2,6 +2,7 @@ import styles from "./ToCartElement.module.css";
 import cartImage from "../../../../../assets/images/buy.svg";
 import {useState } from "react";
 import { DECREASE__PRICE, INCREASE__PRICE } from "../../../../../reducer/types";
+import Button from "../../../../../common/Button/Button";
 
 const ToCartElement = ({productPrice, cartCount, cartPrice, dispatch, id, category}) => {
 
@@ -56,6 +57,16 @@ const ToCartElement = ({productPrice, cartCount, cartPrice, dispatch, id, catego
                         <span>В корзину</span>
                         <img src={cartImage} alt="buy" />
                     </button>
+                    {/* <Button 
+                        onClick={(event) => {
+                            incrementCountOfProduct(event);
+                            setIsVisible(!isVisible);
+                            } 
+                        }
+                        id = {id} 
+                        title='В корзину' 
+                        src = {cartImage}
+                    /> */}
                 </div> 
             }
         </>

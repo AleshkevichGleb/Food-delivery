@@ -1,0 +1,27 @@
+
+.form__block {
+    background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
+    padding: 30px;
+    border-radius: 10px;
+    margin-top: 30px;
+
+    .form__subtitle {
+        color:#fff;
+        font-weight: 700;
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+}
+
+@media(max-width: 851px) {
+    .form__block {
+        width: 95%;
+        margin: 30px auto;
+    }
+}
+
+@media(max-width: 510px) {
+    .form__block {
+        padding: 30px 10px;
+    }
+}

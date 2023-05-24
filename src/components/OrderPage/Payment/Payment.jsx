@@ -1,16 +1,18 @@
+import ErrorFormValidate from "../ErrorFormValidate/ErrorFormValidate";
+import PageContainer from "../PageContainer/PageContainer";
 import styles from "./Payment.module.scss";
 import { useState } from "react";
 
-const Payment = ({data, setData, handleData}) => {
+const Payment = ({data, setData, handleData, error}) => {
     const [isPayment, setIsPayment] = useState('cash');
 
     const getHandleData = (event) => {
+        event.preventDefault();
         handleData(event)
     }
 
     return(
-        <div className={styles.form__block}>
-            <h3 className={styles.form__subtitle}>3. Оплатить</h3>
+        <PageContainer title = "3. Оплатить">
             <div className={styles.form__group}>
                 <div className={styles.changeButtonsContainer}>
                     <button 
@@ -65,9 +67,10 @@ const Payment = ({data, setData, handleData}) => {
                         onChange={getHandleData}
                      />
                     <label htmlFor="surrender_of_money" className={styles.label}>Сдача с</label>
+                    <ErrorFormValidate error = {error} name = 'surrender_of_money'/>
                 </div>
             } 
-        </div>
+       </PageContainer>
     )
 }
 

@@ -6,6 +6,7 @@ import OurCaffe from "../../OurCaffe/OurCaffe";
 import ToCartElement from "./ToCartElement/ToCartElement";
 import { productReducer } from "../../../../reducer/productReducer";
 import { initialState } from "../../../../reducer/initialState";
+import Title from "../../../../common/Title/Title";
 
 const ProductsItems = () => {
     const [state, dispatch] = useReducer(productReducer, initialState);
@@ -22,9 +23,7 @@ const ProductsItems = () => {
     return(
         <>
         <div className={styles.productsItems} key = {link}>
-            <div className={styles.productsItems__titleContainer}>
-                <h2 className={styles.productsItems__title}>{title}</h2>
-            </div>
+            <Title title={title}/>
             <div className={styles.itemsContainer}>
                 {
                     products.map(product =>

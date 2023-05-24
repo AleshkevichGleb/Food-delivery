@@ -1,204 +1,227 @@
 
+.form__subtitle {
+    color:#fff;
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
 
-.form {
+.recall__group {
 
-    &__block {
-        background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
-        padding: 30px;
-        border-radius: 10px;
-        margin-top: 30px;
+    .underTitle {
+        padding-top: 30px;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 22px;
+    }
 
+    .recall__container {
+        display: flex;
+        flex-direction: column;
+        color: #fff;
+        gap:15px;
 
-        .form__subtitle {
-            color:#fff;
+        .recall__label {
+            position: relative;
+            width: 100%;
+            display: block;
+            display: flex;
+            font-size: 13px;
             font-weight: 700;
-            font-size: 18px;
-            margin-bottom: 30px;
-        }
+            letter-spacing: 1.1px;
+            gap:5px;
+            align-items: center;
+            padding-left: 27px;
 
-        .recall__group {
-
-            .underTitle {
-                padding-top: 30px;
-                color: #fff;
-                font-size: 16px;
-                font-weight: 700;
-                margin-bottom: 22px;
+            input[type="radio"] {
+                display: none;
             }
 
-            .recall__container {
+            
+            span {
+                position: absolute;
+                left: 0;
+                top:-3px;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                border: 1px solid #fff;
+                transition: .3s;
+            }
+
+            span:after {
+                content: "";
+                background-color: #618967;
                 display: flex;
-                flex-direction: column;
-                color: #fff;
-                gap:15px;
+                position: absolute;
+                left: 2px;
+                top: 2px;
+                width: 14px;
+                height: 14px;
+                border-radius: 50%;
+                transform: scale(0);
+                transition: .3s linear;
+            }
+            
+            input[type = "radio"]:checked ~ span::after{
+                transform: scale(1);
+            }
 
-                .recall__label {
-                    position: relative;
-                    width: 100%;
-                    display: block;
-                    display: flex;
-                    font-size: 13px;
-                    font-weight: 700;
-                    letter-spacing: 1.1px;
-                    gap:5px;
-                    align-items: center;
-                    padding-left: 27px;
+            input[type = "radio"]:checked ~ span{
+                border: 1px solid #618967;
+            }
 
-                    input[type="radio"] {
-                        display: none;
-                    }
+        }
+    }
+}
 
-                    span {
-                        position: absolute;
-                        left: 0;
-                        top:-3px;
-                        width: 20px;
-                        height: 20px;
-                        border-radius: 50%;
-                        border: 1px solid #fff;
-                        transition: .3s;
-                    }
+.form__group {
+    display: flex;
+    align-items: center;
+    
+    .changeButtonsContainer {
+        width: 363px;
+        height: 60px;
+        border-radius: 10px;
+        border: 1px solid #72A479;
+        overflow: hidden;
 
-                    span:after {
-                        content: "";
-                        background-color: #618967;
-                        display: flex;
-                        position: absolute;
-                        left: 2px;
-                        top: 2px;
-                        width: 14px;
-                        height: 14px;
-                        border-radius: 50%;
-                        transform: scale(0);
-                        transition: .3s linear;
-                    }
-                    
-                    input[type = "radio"]:checked ~ span::after{
-                        transform: scale(1);
-                    }
+        .changeButton {
+            width: 50%;
+            height: 100%;
+            background-color: transparent;
+            border: none;
+            font-weight: 700;
+            color: #fff;
+            font-size: 16px;
+        }
+        
+        .changeButton___checked {
+            background: linear-gradient(114.93deg, #618967 5.11%, #72A479 94%);
+        }
+    }
 
-                    input[type = "radio"]:checked ~ span{
-                        border: 1px solid #618967;
-                    }
-
-                }
+    .input__group {
+        position: relative; 
+        margin-left: 20px;
+        display: flex;
+        flex-direction: column;
+    
+        .input {
+            width: 173px;
+            height: 60px;
+            padding: 10px 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            background-color: transparent;
+            outline: none;
+            transition: .4s;
+            font-size: 16px;
+            color: #fff;
+    
+            &:focus {
+                border: none;
+                border-bottom:1.5px solid #59b068;
+            }
+    
+            &:focus ~ .label,
+            &:not(:placeholder-shown) ~ .label {
+                top: -14px;
+                left: 0px;
+                font-size: 13px;
+                color: #bccbbe;
+                font-weight: 700;
             }
         }
+    
+        .label {
+            position: absolute;
+            top: 22px;
+            left: 15px;
+            transition: .4s;
+            color: #fff;
+        }
+    }
 
-        .form__group {
+    .person__container {
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px 20px 0px 29px;
+        width: 263px;
+        height: 60px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 700;
+
+        .persons__counter {
             display: flex;
             align-items: center;
-            
-            .changeButtonsContainer {
-                width: 363px;
-                height: 60px;
-                border-radius: 10px;
-                border: 1px solid #72A479;
-                overflow: hidden;
+            justify-content: space-between;
+            width: 70px;
 
-                .changeButton {
-                    width: 50%;
-                    height: 100%;
-                    background-color: transparent;
-                    border: none;
-                    font-weight: 700;
-                    color: #fff;
-                    font-size: 16px;
-                }
-                
-                .changeButton___checked {
-                    background: linear-gradient(114.93deg, #618967 5.11%, #72A479 94%);
-                }
+            .counter {
+                font-size: 18px;
+                font-weight: 700;
             }
 
-            .input__group {
-                position: relative; 
-                margin-left: 20px;
-            
-                .input {
-                    width: 173px;
-                    height: 60px;
-                    padding: 10px 15px;
-                    border: 1px solid rgba(255, 255, 255, 0.1);
-                    border-radius: 10px;
-                    background-color: transparent;
-                    outline: none;
-                    transition: .4s;
-                    font-size: 16px;
-                    color: #fff;
-            
-                    &:focus {
-                        border: none;
-                        border-bottom:1.5px solid #59b068;
-                    }
-            
-                    &:focus ~ .label,
-                    &:not(:placeholder-shown) ~ .label {
-                        top: -14px;
-                        left: 0px;
-                        font-size: 13px;
-                        color: #bccbbe;
-                        font-weight: 700;
-                    }
-                }
-            
-                .label {
-                    position: absolute;
-                    top: 22px;
-                    left: 15px;
-                    transition: .4s;
-                    color: #fff;
-                }
-            }
 
-            .person__container {
-                margin-top: 20px;
+            .button__minus {
+                color: #fff;
+                background-color: transparent;
+                border:none;
+                outline: none;
+                font-size: 35px;
                 display: flex;
                 align-items: center;
-                justify-content: space-between;
-                padding: 0px 20px 0px 29px;
-                width: 263px;
-                height: 60px;
-                border: 1px solid rgba(255, 255, 255, 0.1);
-                border-radius: 10px;
+                justify-content: center;
+            }
+            .button__plus {
                 color: #fff;
-                font-size: 16px;
-                font-weight: 700;
+                background-color: transparent;
+                border:none;
+                outline: none;
+                position: relative;
+                font-size: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }   
+        }
+    }
+}
 
-                .persons__counter {
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    width: 70px;
 
-                    .counter {
-                        font-size: 18px;
-                        font-weight: 700;
-                    }
+@media(max-width: 767.98px) {
+    .form__group {
+        flex-wrap: wrap;
+        gap: 25px;
+
+        .changeButtonsContainer {
+            width: 100%;
+
+        }
+
+        .input__group {
+            margin-left: 0;
+        }
+    }
+}
 
 
-                    .button__minus {
-                        color: #fff;
-                        background-color: transparent;
-                        border:none;
-                        outline: none;
-                        font-size: 35px;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                    }
-                    .button__plus {
-                        color: #fff;
-                        background-color: transparent;
-                        border:none;
-                        outline: none;
-                        position: relative;
-                        font-size: 30px;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                    }   
-                }
+@media(max-width: 436px) {
+    .form__group {
+
+        .changeButtonsContainer {
+
+            .changeButton {
+                text-align: center;
+                vertical-align: middle;
+                font-size: 14px;
             }
         }
 

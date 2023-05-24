@@ -1,6 +1,7 @@
+import ErrorFormValidate from "../../ErrorFormValidate/ErrorFormValidate";
 import styles from "./DeliveryChange.module.scss";
 
-const DeliveryChange = ({data, getHandleData}) => {
+const DeliveryChange = ({data, getHandleData, error}) => {
 
     return(
         <>
@@ -18,6 +19,7 @@ const DeliveryChange = ({data, getHandleData}) => {
                         onChange={getHandleData}
                     />
                     <label htmlFor="street" className={styles.label}>Укажите улицу</label>
+                    <ErrorFormValidate error={error} name = 'street'/>
             </div>
             <div className={styles.input__group}>
                     <input 
@@ -30,6 +32,7 @@ const DeliveryChange = ({data, getHandleData}) => {
                         onChange={getHandleData}
                     />
                     <label htmlFor="house" className={styles.label}>Номер дома</label>
+                    <ErrorFormValidate error={error} name = 'house'/>
             </div>
 
             <div className={styles.input__group}>
@@ -43,6 +46,7 @@ const DeliveryChange = ({data, getHandleData}) => {
                         onChange={getHandleData}
                     />
                     <label htmlFor="flat" className={styles.label}>№ квартиры/офиса</label>
+                    <ErrorFormValidate error={error} name = 'flat'/>
             </div>
 
             <div className={styles.input__group}>
@@ -56,6 +60,7 @@ const DeliveryChange = ({data, getHandleData}) => {
                         onChange={getHandleData}
                     />
                     <label htmlFor="entrance" className={styles.label}>Подъезд</label>
+                    <ErrorFormValidate error={error} name = 'entrance'/>
             </div>
 
             <div className={styles.input__group}>
@@ -69,6 +74,7 @@ const DeliveryChange = ({data, getHandleData}) => {
                         onChange={getHandleData}
                     />
                     <label htmlFor="floor" className={styles.label}>Этаж</label>
+                    <ErrorFormValidate error={error} name = 'floor'/>
             </div>
 
             <div className={styles.input__group}>

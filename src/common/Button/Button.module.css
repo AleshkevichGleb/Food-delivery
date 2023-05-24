@@ -1,0 +1,18 @@
+
+.button { 
+    width: 137px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background: linear-gradient(114.93deg, #618967 5.11%, #72A479 94%);
+    border-radius: 10px;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    transition: .1s linear;
+}
+
+.button:hover {
+    box-shadow: 0px 0px 45px #618967;
+}

@@ -7,6 +7,8 @@ import "../../index.css";
 import { useState } from "react";
 import Burger from "./Burger/Burger";
 import FooterNav from "../Footer/FooterNav/FooterNav";
+import ButtonLink from "../../common/ButtonLink/ButtonLink";
+import buyImage from "../../assets/images/buy.svg"
 
 const Header = ({fullCount}) => {
 
@@ -26,7 +28,7 @@ const Header = ({fullCount}) => {
                         <FooterNav/>
                     </div>
                 </div>
-                <Cart items = {4}/>
+                <ButtonLink items={4} src = {buyImage} title = 'Корзина' url = '/cart'/>
             </div>
         </div>
     )

@@ -1,11 +1,14 @@
+import ErrorFormValidate from "../ErrorFormValidate/ErrorFormValidate";
+import PageContainer from "../PageContainer/PageContainer";
 import styles from "./TimeToDelivery.module.scss";
 import { useState } from "react";
 
-const TimeToDelivery = ({data, handleData}) => {
+const TimeToDelivery = ({data, handleData, error}) => {
     const [isToTime, setIsToTime] = useState(false);
     const [persons, setPersons] = useState(1);
 
     const getHandleData = (event) => {
+        event.preventDefault();
         handleData(event);
     }
 
@@ -23,18 +26,16 @@ const TimeToDelivery = ({data, handleData}) => {
         getHandleData(event)
     }
     return(
-        <div className={styles.form__block}>
-            <h3 className={styles.form__subtitle}>4. Когда доставить</h3>
+       <PageContainer title = '4. Когда доставить'>
             <div className={styles.form__group}>
                 <div className={styles.changeButtonsContainer}>
                     <button 
                         className= {isToTime? styles.changeButton : [styles.changeButton, styles.changeButton___checked].join(' ')}
-                        // id = "timeSoon"
                         value="soon"
                         name = "time"
                         onClick={(event) => {
                             getHandleData(event)
-                            setIsToTime(false);
+                            setIsToTime(false)
                         }}
                     >
                         В ближайшее время
@@ -87,7 +88,7 @@ const TimeToDelivery = ({data, handleData}) => {
                             type="radio" 
                             name = "recall" 
                             value = "noRecall" 
-                            onChange={getHandleData}
+                            onChange={handleData}
                         />
                         Не перезванивать
                         <span></span>
@@ -99,14 +100,14 @@ const TimeToDelivery = ({data, handleData}) => {
                             type="radio" 
                             name = "recall" 
                             value = "Recall" 
-                            onChange={getHandleData}
+                            onChange={handleData}
                         />
                         Потребуется звонок оператора
                         <span></span>
                     </label>
                 </div>
             </div>
-        </div>
+        </PageContainer>
     )
 }
 

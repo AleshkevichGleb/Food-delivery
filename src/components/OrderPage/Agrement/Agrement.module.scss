@@ -1,49 +1,70 @@
-.form {
 
-    &__block {
-        background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
-        padding: 30px;
-        border-radius: 10px;
-        margin-top: 30px;
+.form__group{
+    display: flex;
+    align-items: center;
 
-        .form__group{
-            display: flex;
-            align-items: center;
+    input[type = "checkbox"] {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+    }
 
-            input[type = "checkbox"] {
-                width: 20px;
-                height: 20px;
-                margin-right: 10px;
-            }
+    .text {
+        color: #fff;
+        font-size: 13px;
+        font-weight: 600;
 
-            .text {
-                color: #fff;
-                font-size: 13px;
-                font-weight: 600;
-                // letter-spacing: 1.1px;
-
-                .link {
-                    color: #72A479;
-                }
-            }
-
-            .button { 
-                width: 169px;
-                height: 51px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                color: #fff;
-                font-size: 14px;
-                font-weight: 700;
-                background: linear-gradient(114.93deg, #618967 5.11%, #72A479 94%);
-                border-radius: 10px;
-                border: none;
-                outline: none;
-                transition: .3s;
-                margin-left: auto;
-            }
-            
+        .link {
+            color: #72A479;
         }
     }
+
+    .button { 
+        width: 169px;
+        height: 51px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 700;
+        background: linear-gradient(114.93deg, #618967 5.11%, #72A479 94%);
+        border-radius: 10px;
+        border: none;
+        outline: none;
+        transition: .3s;
+        margin-left: auto;
+    }
+    .button:active {
+        background: linear-gradient(114.93deg, #93c09d 5.11%, #8fbc95 94%);
+    }
+    
+    .button:hover {
+        box-shadow: 0px 0px 45px #618967;
+    }
+}
+
+@media(max-width:767.98px) {
+        
+    .form__group{
+        flex-wrap: wrap;
+        justify-content: center;
+        gap:15px;
+
+
+        .text {
+            color: #fff;
+            font-size: 13px;
+            font-weight: 600;
+            width: 80%;
+    
+            .link {
+                color: #72A479;
+            }
+        }
+        .button { 
+           margin: 0 auto;
+        }
+    }
+
 }

@@ -1,26 +1,26 @@
 import { Link } from "react-router-dom";
 import styles from "./Agrement.module.scss";
+import PageContainer from "../PageContainer/PageContainer";
+import CheckDataPopUp from "../CheckDataPopUp/CheckDataPopUp";
 
-const Agrement = ({data, handleData}) => {
-
-    // const getHandleData = (event) => {
-    //     handleData(event)
-    // }
+const Agrement = ({data, handleData, isDisabled, setIsShowPopUp}) => {
 
     const sendData = (event) => {
+        setIsShowPopUp(true)
         event.preventDefault();
         console.log(data);
     }
-    console.log(data.agreement);
+    
     return(
-       <div className={styles.form__block}>
+        <>
+        <PageContainer>
             <div className={styles.form__group}>
                 <input 
                     className={styles.checbox}
                     type="checkbox"
                     name = "agreement"
                     onChange={handleData}
-                    checked = {data.agreement == true}
+                    checked = {data.agreement === true}
 
                 />
                 <span className={styles.text}>Я согласен на обработку моих перс. данных в соответствии с  
@@ -29,9 +29,17 @@ const Agrement = ({data, handleData}) => {
                     </Link>
                 </span>
 
-                <button className={styles.button} type = "submit" onClick={sendData}>Оформить заказ</button>
+                <button 
+                    className={styles.button} 
+                    type = "submit" 
+                    disabled = {isDisabled}
+                    onClick={sendData}
+                >
+                    Оформить заказ
+                </button>
             </div>
-       </div>
+        </PageContainer>
+        </>
     )
 }
 

@@ -1,7 +1,10 @@
+import Title from "../../common/Title/Title";
 
 const Delivery = () => {
     return(
-        <div className="main">Delivery</div>
+        <div className="main">
+            <Title title='Условия доставки'/>
+        </div>
     )
 }
 

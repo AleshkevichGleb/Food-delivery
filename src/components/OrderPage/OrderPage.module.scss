@@ -17,6 +17,15 @@
     position: relative;
 }
 
+.back:hover{
+    color: #b4b3b3;
+}
+
+.back:hover::before {
+    border: 2px solid #b4b3b3;
+     border-top: none;
+    border-right: none;
+}
 .back::before {
     content: '';
     position: absolute;
@@ -67,12 +76,7 @@
 }
 
 @media (max-width: 859px) {
-    .form {
-
-        &__block {
-           width: 95%;
-           margin: 0 auto;
-
-        }
+    .back {
+        margin-left: 15px;
     }
 }

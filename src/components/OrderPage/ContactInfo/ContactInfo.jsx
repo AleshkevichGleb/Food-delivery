@@ -1,15 +1,21 @@
+import { useRef } from "react";
+import ErrorFormValidate from "../ErrorFormValidate/ErrorFormValidate";
 import styles from "./ContactInfo.module.scss";
-const ContactInfo = ({data, handleData}) => {
+import PageContainer from "../PageContainer/PageContainer";
 
-    const getHandleData = (event) => {
-        handleData(event);
+const ContactInfo = ({data, handleData, error}) => {
+
+    const ref = useRef();
+
+    async function writePhoneSymbols({target}){
+        let {value} = target;
+        value = await value.replace(/[^\d\+\-\(\)]/gi,'')
+        ref.current.value = value;
     }
 
     return(
-        <div className={styles.form__block}>
-            <h3 className={styles.form__subtitle}>1. Контактная информация</h3>
+        <PageContainer title='1. Контактная информация'>
             <div className={styles.form__group}>
-
                 <div className={styles.input__group}>
                     <input 
                         className= {styles.input}
@@ -18,25 +24,31 @@ const ContactInfo = ({data, handleData}) => {
                         name = "name" 
                         type="text" 
                         value={data.name}
-                        onChange={getHandleData}
+                        onChange={handleData}
                     />
                     <label htmlFor="name" className={styles.label}>Имя</label>
+                    <ErrorFormValidate error = {error} name = 'name'/>
                 </div>
 
                 <div className={styles.input__group}>
                     <input 
                         className= {styles.input}
                         placeholder=" "
+                        ref = {ref}
                         type="tel" 
                         id = "phone"
                         name = "phone"
                         value={data.phone}
-                        onChange={getHandleData}
+                        onChange={event =>{ 
+                            handleData(event);
+                            writePhoneSymbols(event);
+                        }}
                     />
                     <label htmlFor="phone" className={styles.label}>Телефон</label>
+                    <ErrorFormValidate error={error} name = 'phone'/>
                 </div>
             </div>
-        </div>
+        </PageContainer>
     )
 }
 
