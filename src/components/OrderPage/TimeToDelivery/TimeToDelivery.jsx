@@ -16,14 +16,14 @@ const TimeToDelivery = ({data, handleData, error}) => {
         event.preventDefault();
         if(persons>1) {
             await setPersons(persons-1);
-            getHandleData(event);
+            handleData(event);
         }
     }
     
     async function incrementPersons(event){
         event.preventDefault();
         await setPersons(persons+1);
-        getHandleData(event)
+        handleData(event)
     }
     return(
        <PageContainer title = '4. Когда доставить'>

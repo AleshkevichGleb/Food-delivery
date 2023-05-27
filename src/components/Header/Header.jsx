@@ -9,9 +9,12 @@ import Burger from "./Burger/Burger";
 import FooterNav from "../Footer/FooterNav/FooterNav";
 import ButtonLink from "../../common/ButtonLink/ButtonLink";
 import buyImage from "../../assets/images/buy.svg"
+import { useContext } from "react";
+import { AppContext } from "../../App";
 
-const Header = ({fullCount}) => {
+const Header = () => {
 
+    const {fullCount} = useContext(AppContext);
     const [active, setActive] = useState(false);
 
     return(
@@ -28,7 +31,8 @@ const Header = ({fullCount}) => {
                         <FooterNav/>
                     </div>
                 </div>
-                <ButtonLink items={4} src = {buyImage} title = 'Корзина' url = '/cart'/>
+                {/* <ButtonLink items={fullCount} src = {buyImage} title = 'Корзина' url = '/cart'/> */}
+                <Cart items={fullCount}/>
             </div>
         </div>
     )

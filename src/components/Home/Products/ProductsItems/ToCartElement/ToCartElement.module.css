@@ -51,15 +51,7 @@
 .button { 
     width: 137px;
     height: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    background: linear-gradient(114.93deg, #618967 5.11%, #72A479 94%);
-    border-radius: 10px;
-    border: none;
-    color: #fff;
     font-size: 14px;
-    transition: .1s linear;
 }
 
 .item__changeContainer {
@@ -71,7 +63,7 @@
 .buttonChangePrice {
     width: 62px;
     height: 44px;   
-    font-size: 24px;
+    font-size: 25px;
 }
 
 .button:hover {

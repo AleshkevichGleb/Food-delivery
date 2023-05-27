@@ -1,6 +1,6 @@
 import { INCREASE__PRICE, DECREASE__PRICE } from "./types";
 
-export const productReducer = (state, action) => { 
+export const productReducer = (state, action) => {
     switch(action.type) {
 
         case INCREASE__PRICE: {
@@ -12,16 +12,15 @@ export const productReducer = (state, action) => {
                 if(category === type.link) {
                    
                     const products = type.products.map(product => {
-
+                        
                         if(product.id === +id) {
-
                             return {
                                 ...product,
                                 cartPrice: product.cartPrice + product.price, 
                                 cartCount: product.cartCount + 1
                             }
                         }
-
+        
                         return product;
                     }) 
                     return {...type, products: products };

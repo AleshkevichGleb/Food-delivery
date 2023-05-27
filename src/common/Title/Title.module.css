@@ -10,6 +10,7 @@
     font-weight: 700;
     color: #fff;
     position: relative;
+    text-transform: uppercase;
 }
 
 .productsItems__title::before {

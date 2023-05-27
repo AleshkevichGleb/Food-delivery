@@ -1,10 +1,6 @@
 import styles from "./PickUpChange.module.scss";
 
-const PickUpChange = ({getHandleData}) => {
-
-    const handleData = (event) => {
-        getHandleData(event);
-    }
+const PickUpChange = ({handleData}) => {
 
     return(
         <div className={styles.form__group}>

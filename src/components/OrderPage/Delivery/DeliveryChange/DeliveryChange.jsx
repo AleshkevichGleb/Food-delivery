@@ -1,7 +1,7 @@
 import ErrorFormValidate from "../../ErrorFormValidate/ErrorFormValidate";
 import styles from "./DeliveryChange.module.scss";
 
-const DeliveryChange = ({data, getHandleData, error}) => {
+const DeliveryChange = ({data, handleData, error}) => {
 
     return(
         <>
@@ -16,7 +16,7 @@ const DeliveryChange = ({data, getHandleData, error}) => {
                         type="text"
                         name = "address"
                         value = {data.address.street}
-                        onChange={getHandleData}
+                        onChange={handleData}
                     />
                     <label htmlFor="street" className={styles.label}>Укажите улицу</label>
                     <ErrorFormValidate error={error} name = 'street'/>
@@ -29,7 +29,7 @@ const DeliveryChange = ({data, getHandleData, error}) => {
                         type="text"
                         name = "address"
                         value = {data.address.house}
-                        onChange={getHandleData}
+                        onChange={handleData}
                     />
                     <label htmlFor="house" className={styles.label}>Номер дома</label>
                     <ErrorFormValidate error={error} name = 'house'/>
@@ -43,7 +43,7 @@ const DeliveryChange = ({data, getHandleData, error}) => {
                         type="text"
                         name = "address"
                         value = {data.address.flat}
-                        onChange={getHandleData}
+                        onChange={handleData}
                     />
                     <label htmlFor="flat" className={styles.label}>№ квартиры/офиса</label>
                     <ErrorFormValidate error={error} name = 'flat'/>
@@ -57,7 +57,7 @@ const DeliveryChange = ({data, getHandleData, error}) => {
                         type="text"
                         name = "address"
                         value = {data.address.entrance}
-                        onChange={getHandleData}
+                        onChange={handleData}
                     />
                     <label htmlFor="entrance" className={styles.label}>Подъезд</label>
                     <ErrorFormValidate error={error} name = 'entrance'/>
@@ -71,7 +71,7 @@ const DeliveryChange = ({data, getHandleData, error}) => {
                         type="text"
                         name = "address"
                         value = {data.address.floor}
-                        onChange={getHandleData}
+                        onChange={handleData}
                     />
                     <label htmlFor="floor" className={styles.label}>Этаж</label>
                     <ErrorFormValidate error={error} name = 'floor'/>
@@ -85,7 +85,7 @@ const DeliveryChange = ({data, getHandleData, error}) => {
                         type="text"
                         name = "address"
                         value = {data.address.comment}
-                        onChange={getHandleData}
+                        onChange={handleData}
                     />
                     <label htmlFor="comment" className={styles.label}>Комментарий</label>
             </div>

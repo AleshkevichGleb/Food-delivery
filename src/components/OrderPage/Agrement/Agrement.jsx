@@ -8,7 +8,7 @@ const Agrement = ({data, handleData, isDisabled, setIsShowPopUp}) => {
     const sendData = (event) => {
         event.preventDefault();
         setIsShowPopUp(true)
-        if(!isDisabled) {
+        if(!isDisabled && data.agreement) {
             console.log(data);
         }
     }

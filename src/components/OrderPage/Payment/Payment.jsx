@@ -6,11 +6,6 @@ import { useState } from "react";
 const Payment = ({data, setData, handleData, error}) => {
     const [isPayment, setIsPayment] = useState('cash');
 
-    const getHandleData = (event) => {
-        event.preventDefault();
-        handleData(event)
-    }
-
     return(
         <PageContainer title = "3. Оплатить">
             <div className={styles.form__group}>
@@ -22,8 +17,9 @@ const Payment = ({data, setData, handleData, error}) => {
                         name = 'payment'
                         onClick={(event) => {
                             setData({...data, payment:{...data.payment={}}})
-                            getHandleData(event)
                             setIsPayment('online')
+                            handleData(event)
+                            event.preventDefault();
                         }}
                     >
                         Оплата онлайн
@@ -35,8 +31,10 @@ const Payment = ({data, setData, handleData, error}) => {
                         name = 'payment'
                         onClick={(event) => {
                             setData({...data, payment:{...data.payment={}}})
-                            getHandleData(event)
+                            handleData(event)
+                            event.preventDefault();
                             setIsPayment('card')
+                        
                         }}
                     >
                         Курьеру картой
@@ -47,7 +45,8 @@ const Payment = ({data, setData, handleData, error}) => {
                         value="cash"
                         name = 'payment'
                         onClick={(event) => {
-                            getHandleData(event)
+                            handleData(event)
+                            event.preventDefault();
                             setIsPayment('cash')
                         }}
                     >
@@ -64,7 +63,7 @@ const Payment = ({data, setData, handleData, error}) => {
                         type="text" 
                         name = "payment"
                         value={data.surrender_of_money}
-                        onChange={getHandleData}
+                        onChange={handleData}
                      />
                     <label htmlFor="surrender_of_money" className={styles.label}>Сдача с</label>
                     <ErrorFormValidate error = {error} name = 'surrender_of_money'/>

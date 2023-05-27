@@ -9,11 +9,6 @@ const Delivery = ({data, setData, handleData, error}) => {
     
     const [isDelivery, setIsDelivery] = useState(true);
 
-    
-    const getHandleData = (event) => {
-        event.preventDefault();
-        handleData(event);
-    }
 
     return(
         <PageContainer title = '2. Доставка'>
@@ -33,7 +28,8 @@ const Delivery = ({data, setData, handleData, error}) => {
                                 floor: "",
                                 comment: ""}}
                             })
-                            getHandleData(event)
+                            handleData(event)
+                            event.preventDefault();
                             setIsDelivery(true);
                         }}
                     >
@@ -48,7 +44,8 @@ const Delivery = ({data, setData, handleData, error}) => {
                             setData({...data, address:{...data.address={}}})
                             setIsDelivery(false)
                             setData({...data, address:{...data.address = {streetRestaraunt: 'not indicated'}}})
-                            getHandleData(event)
+                            handleData(event)
+                            event.preventDefault();
                         }}
                     >
                         Самовывоз
@@ -61,8 +58,8 @@ const Delivery = ({data, setData, handleData, error}) => {
                 </div>}
             </div>
             {isDelivery 
-            ? <DeliveryChange data = {data} getHandleData = {getHandleData} error = {error}/> 
-            : <PickUpChange data = {data} getHandleData = {getHandleData}/> 
+            ? <DeliveryChange data = {data} handleData = {handleData} error = {error}/> 
+            : <PickUpChange data = {data} handleData = {handleData}/> 
             }
         </PageContainer>
     )
