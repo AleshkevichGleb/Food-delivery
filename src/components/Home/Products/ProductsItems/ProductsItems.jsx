@@ -1,8 +1,6 @@
 import styles from "./ProductsItems.module.css";
 import { Link, useParams } from "react-router-dom";
-import { typesEat } from "../../../../data/data";
-import { useReducer, useState } from "react";
-import OurCaffe from "../../OurCaffe/OurCaffe";
+import { useReducer } from "react";
 import ToCartElement from "./ToCartElement/ToCartElement";
 import { productReducer } from "../../../../reducer/productReducer";
 import { initialState } from "../../../../reducer/initialState";
@@ -12,7 +10,7 @@ const ProductsItems = () => {
     const [state, dispatch] = useReducer(productReducer, initialState);
 
     const {url} = useParams();
-    console.log(url);
+
     
     const {title, products, link} = state.find(type => {
         if(url === undefined) {

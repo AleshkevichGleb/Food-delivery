@@ -3,15 +3,15 @@ import styles from "./Product.module.scss";
 import { useReducer } from "react";
 import { productReducer } from "../../../../../reducer/productReducer";
 import { initialState } from "../../../../../reducer/initialState";
-import { Link, useLocation, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import ToCartElement from "../ToCartElement/ToCartElement";
 
 const Product = () => {
     const [state, dispatch] = useReducer(productReducer, initialState);
 
     const {url, id} = useParams();
-    console.log(url);
-    const {products} = state.find(el => el.link == url);
+
+    const {products} = state.find(el => el.link === url);
 
     const {description,
            title,
@@ -21,7 +21,7 @@ const Product = () => {
            cartPrice,
            weight,
 
-        } = products.find(el => el.id == id);
+        } = products.find(el => el.id === +id);
 
     console.log(cartPrice);
 
