@@ -12,12 +12,15 @@ import OrderPage from "./components/OrderPage/OrderPage";
 import { createContext } from "react";
 import Product from "./components/Home/Products/ProductsItems/Product/Product";
 import AboutPage from "./components/AboutPage/AboutPage";
+import { productReducer } from "./reducer/productReducer";
+import { initialState } from "./reducer/initialState";
 
 export const AppContext = createContext()
 
 function App() {
   const [fullCount, setFullCount] = useState(0);
-
+  const [state, dispatch] = useReducer(productReducer, initialState)
+  
   const [weather, setWeather] = useState({});
   useEffect(() => {
     fetch("https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&current_weather=true&hourly=temperature_2m,relativehumidity_2m,windspeed_10m")
@@ -33,13 +36,13 @@ function App() {
 
   }, []);
 
-  const {state} = useLocation();
+  const {state: stateLocation} = useLocation();
 
   return (
     <>
-      <AppContext.Provider value={{fullCount, setFullCount}}>
+      <AppContext.Provider value={{fullCount, setFullCount, state, dispatch}}>
           <Header/>
-          {!state && <Home/>}
+          {!stateLocation && <Home/>}
           <Routes>
               <Route path = '/' element = {<ProductsItems/>}/>
               <Route path = '/:url' element = {<ProductsItems/>}/>

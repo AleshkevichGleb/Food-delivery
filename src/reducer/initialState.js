@@ -22,7 +22,12 @@ export const initialState = [
                     src: lamb,
                     alt:'lamb'
                 },
-                
+                addInfo : {
+                    "Белки": 14.54,
+                    "Жиры": 5.12,
+                    "Углеводы": 22.5,
+                    "Ккал": 390
+                }
             },
             {
                 id: 2,
@@ -36,7 +41,12 @@ export const initialState = [
                     src: turkey,
                     alt:'turkey'
                 } ,
-                
+                addInfo : {
+                    "Белки": 14.54,
+                    "Жиры": 5.12,
+                    "Углеводы": 22.5,
+                    "Ккал": 390
+                }
             },
             {
                 id: 3,
@@ -50,7 +60,12 @@ export const initialState = [
                     src: goose,
                     alt:'goose'
                 } ,
-                
+                addInfo : {
+                    "Белки": 14.54,
+                    "Жиры": 5.12,
+                    "Углеводы": 22.5,
+                    "Ккал": 390
+                }
             },
             {
                 id: 4,
@@ -64,7 +79,12 @@ export const initialState = [
                     src: duck,
                     alt:'duck'
                 } ,
-                
+                addInfo : {
+                    "Белки": 14.54,
+                    "Жиры": 5.12,
+                    "Углеводы": 22.5,
+                    "Ккал": 390
+                }
             },
         ]
     },
@@ -85,7 +105,12 @@ export const initialState = [
                     src: lamb,
                     alt:'lamb'
                 } ,
-                
+                addInfo : {
+                    "Белки": 14.54,
+                    "Жиры": 5.12,
+                    "Углеводы": 22.5,
+                    "Ккал": 390
+                }
                 
             },
             {
@@ -100,7 +125,12 @@ export const initialState = [
                     src: turkey,
                     alt:'turkey'
                 }  ,
-                
+                addInfo : {
+                    "Белки": 14.54,
+                    "Жиры": 5.12,
+                    "Углеводы": 22.5,
+                    "Ккал": 390
+                }
             },
             {
                 id: 3,
@@ -114,7 +144,12 @@ export const initialState = [
                     src: goose,
                     alt:'goose'
                 }  ,
-                
+                addInfo : {
+                    "Белки": 14.54,
+                    "Жиры": 5.12,
+                    "Углеводы": 22.5,
+                    "Ккал": 390
+                }
             },
             {
                 id: 4,
@@ -128,7 +163,12 @@ export const initialState = [
                     src: duck,
                     alt:'duck'
                 }  ,
-                
+                addInfo : {
+                    "Белки": 14.54,
+                    "Жиры": 5.12,
+                    "Углеводы": 22.5,
+                    "Ккал": 390
+                }
             },
         ]
     },
@@ -149,6 +189,12 @@ export const initialState = [
                     src: lamb,
                     alt:'lamb'
                 }  ,
+                addInfo : {
+                    "Белки": 14.54,
+                    "Жиры": 5.12,
+                    "Углеводы": 22.5,
+                    "Ккал": 390
+                }
                 
             },
             {
@@ -163,7 +209,12 @@ export const initialState = [
                     src: turkey,
                     alt:'turkey'
                 }  ,
-                
+                addInfo : {
+                    "Белки": 14.54,
+                    "Жиры": 5.12,
+                    "Углеводы": 22.5,
+                    "Ккал": 390
+                }
             },
             {
                 id: 3,
@@ -177,6 +228,12 @@ export const initialState = [
                     src: goose,
                     alt:'goose'
                 }  ,
+                addInfo : {
+                    "Белки": 14.54,
+                    "Жиры": 5.12,
+                    "Углеводы": 22.5,
+                    "Ккал": 390
+                }
                 
             },
             {
@@ -191,7 +248,12 @@ export const initialState = [
                     src: duck,
                     alt:'duck'
                 }  ,
-                
+                addInfo : {
+                    "Белки": 14.54,
+                    "Жиры": 5.12,
+                    "Углеводы": 22.5,
+                    "Ккал": 390
+                }
             },
         ]
     },
@@ -212,7 +274,12 @@ export const initialState = [
                     src: lamb,
                     alt:'lamb'
                 }  ,
-                
+                addInfo : {
+                    "Белки": 14.54,
+                    "Жиры": 5.12,
+                    "Углеводы": 22.5,
+                    "Ккал": 390
+                }
             },
             {
                 id: 2,
@@ -226,7 +293,12 @@ export const initialState = [
                     src: turkey,
                     alt:'turkey'
                 }  ,
-                
+                addInfo : {
+                    "Белки": 14.54,
+                    "Жиры": 5.12,
+                    "Углеводы": 22.5,
+                    "Ккал": 390
+                }
             },
             {
                 id: 3,
@@ -240,7 +312,12 @@ export const initialState = [
                     src: goose,
                     alt:'goose'
                 }  ,
-                
+                addInfo : {
+                    "Белки": 14.54,
+                    "Жиры": 5.12,
+                    "Углеводы": 22.5,
+                    "Ккал": 390
+                }
             },
             {
                 id: 4,
@@ -254,7 +331,12 @@ export const initialState = [
                     src: duck,
                     alt:'duck'
                 }  ,
-                
+                addInfo : {
+                    "Белки": 14.54,
+                    "Жиры": 5.12,
+                    "Углеводы": 22.5,
+                    "Ккал": 390
+                }
             },
         ]
     },
@@ -275,7 +357,12 @@ export const initialState = [
                     src: lamb,
                     alt:'lamb'
                 }  ,
-                
+                addInfo : {
+                    "Белки": 14.54,
+                    "Жиры": 5.12,
+                    "Углеводы": 22.5,
+                    "Ккал": 390
+                }
             },
             {
                 id: 2,
@@ -289,7 +376,12 @@ export const initialState = [
                     src: turkey,
                     alt:'turkey'
                 }  ,
-                
+                addInfo : {
+                    "Белки": 14.54,
+                    "Жиры": 5.12,
+                    "Углеводы": 22.5,
+                    "Ккал": 390
+                }
             },
             {
                 id: 3,
@@ -303,7 +395,12 @@ export const initialState = [
                     src: goose,
                     alt:'goose'
                 }  ,
-                
+                addInfo : {
+                    "Белки": 14.54,
+                    "Жиры": 5.12,
+                    "Углеводы": 22.5,
+                    "Ккал": 390
+                }
             },
             {
                 id: 4,
@@ -317,7 +414,12 @@ export const initialState = [
                     src: duck,
                     alt:'duck'
                 }  ,
-                
+                addInfo : {
+                    "Белки": 14.54,
+                    "Жиры": 5.12,
+                    "Углеводы": 22.5,
+                    "Ккал": 390
+                }
             },
         ]
     },
@@ -338,7 +440,12 @@ export const initialState = [
                     src: lamb,
                     alt:'lamb'
                 }  ,
-                
+                addInfo : {
+                    "Белки": 14.54,
+                    "Жиры": 5.12,
+                    "Углеводы": 22.5,
+                    "Ккал": 390
+                }
             },
             {
                 id: 2,
@@ -352,7 +459,12 @@ export const initialState = [
                     src: turkey,
                     alt:'turkey'
                 }  ,
-                
+                addInfo : {
+                    "Белки": 14.54,
+                    "Жиры": 5.12,
+                    "Углеводы": 22.5,
+                    "Ккал": 390
+                }
             },
             {
                 id: 3,
@@ -380,7 +492,12 @@ export const initialState = [
                     src: duck,
                     alt:'duck'
                 }  ,
-                
+                addInfo : {
+                    "Белки": 14.54,
+                    "Жиры": 5.12,
+                    "Углеводы": 22.5,
+                    "Ккал": 390
+                }
             },
         ]
     },
@@ -401,7 +518,12 @@ export const initialState = [
                     src: lamb,
                     alt:'lamb'
                 }  ,
-                
+                addInfo : {
+                    "Белки": 14.54,
+                    "Жиры": 5.12,
+                    "Углеводы": 22.5,
+                    "Ккал": 390
+                }
             },
             {
                 id: 2,
@@ -415,7 +537,12 @@ export const initialState = [
                     src: turkey,
                     alt:'turkey'
                 }  ,
-                
+                addInfo : {
+                    "Белки": 14.54,
+                    "Жиры": 5.12,
+                    "Углеводы": 22.5,
+                    "Ккал": 390
+                }
             },
             {
                 id: 3,
@@ -429,7 +556,12 @@ export const initialState = [
                     src: goose,
                     alt:'goose'
                 }  ,
-                
+                addInfo : {
+                    "Белки": 14.54,
+                    "Жиры": 5.12,
+                    "Углеводы": 22.5,
+                    "Ккал": 390
+                }
             },
             {
                 id: 4,
@@ -443,7 +575,12 @@ export const initialState = [
                     src: duck,
                     alt:'duck'
                 }  ,
-                
+                addInfo : {
+                    "Белки": 14.54,
+                    "Жиры": 5.12,
+                    "Углеводы": 22.5,
+                    "Ккал": 390
+                }
             },
         ]
     },
@@ -464,7 +601,12 @@ export const initialState = [
                     src: lamb,
                     alt:'lamb'
                 }  ,
-                
+                addInfo : {
+                    "Белки": 14.54,
+                    "Жиры": 5.12,
+                    "Углеводы": 22.5,
+                    "Ккал": 390
+                }
             },
             {
                 id: 2,
@@ -478,7 +620,12 @@ export const initialState = [
                     src: turkey,
                     alt:'turkey'
                 }  ,
-                
+                addInfo : {
+                    "Белки": 14.54,
+                    "Жиры": 5.12,
+                    "Углеводы": 22.5,
+                    "Ккал": 390
+                }
             },
             {
                 id: 3,
@@ -492,7 +639,12 @@ export const initialState = [
                     src: goose,
                     alt:'goose'
                 }  ,
-                
+                addInfo : {
+                    "Белки": 14.54,
+                    "Жиры": 5.12,
+                    "Углеводы": 22.5,
+                    "Ккал": 390
+                }
             },
             {
                 id: 4,
@@ -506,7 +658,12 @@ export const initialState = [
                     src: duck,
                     alt:'duck'
                 }  ,
-                
+                addInfo : {
+                    "Белки": 14.54,
+                    "Жиры": 5.12,
+                    "Углеводы": 22.5,
+                    "Ккал": 390,
+                }
             },
         ]
     },

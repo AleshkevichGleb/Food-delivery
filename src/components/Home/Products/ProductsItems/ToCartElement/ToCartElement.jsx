@@ -6,10 +6,9 @@ import Button from "../../../../../common/Button/Button";
 import { useContext } from "react";
 import { AppContext } from "../../../../../App";
 
-const ToCartElement = ({productPrice, cartCount, cartPrice, dispatch, id, category}) => {
+const ToCartElement = ({productPrice, cartCount, cartPrice, dispatch, id, category, addStyles, title, src}) => {
 
     const {fullCount, setFullCount} = useContext(AppContext);
-
     const [isVisible, setIsVisible] = useState(cartPrice >= productPrice);
 
     const incrementCountOfProduct = ({currentTarget}) => {
@@ -31,7 +30,7 @@ const ToCartElement = ({productPrice, cartCount, cartPrice, dispatch, id, catego
         {isVisible
                             
             ?   <div className={styles.item__changeContainer}> 
-                    <div className= {styles.item__countCart}>{cartCount}</div>
+                    <div className= {[styles.item__countCart, addStyles].join(' ')}>{cartCount}</div>
                     <Button 
                     addStyles={styles.buttonChangePrice}
                     onClick = {decrementCountOfProduct}
@@ -56,8 +55,8 @@ const ToCartElement = ({productPrice, cartCount, cartPrice, dispatch, id, catego
                             }
                         }
                         id = {id}
-                        title = 'Корзина'
-                        src = {cartImage}
+                        title = {title}
+                        src = {src}
                         addStyles={styles.button}
                     />
                 </div> 

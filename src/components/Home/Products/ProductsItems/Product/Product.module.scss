@@ -4,10 +4,47 @@
     padding: 30px 0;
 }
 
-.goBack {
-    color: #fff;
-    font-weight: 600;
+.backContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+
+    .backArrow {
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        background: linear-gradient(114.93deg, #618967 5.11%, #72A479 94%);
+        position: relative;
+    }
+
+    .backArrow::before {
+        content: '';
+        position: absolute;
+        top: calc(50% - 4px);
+        left: calc(50% - 4px);
+        width: 7px;
+        height: 7px;
+        border: 2.5px solid #fff;
+        border-top: none;
+        border-right: none;
+        transform: rotate(45deg);
+    }
+
+
+    .goBack {
+        color: #fff;
+        font-weight: 600;
+        position: relative;
+
+        &:hover {
+            color: #CFCFCF;
+        }
+    }
+
 }
+
+
 
 .product {
     max-width: 1190px;
@@ -32,6 +69,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        position: relative;
 
         .product__titleContainer {
             display: flex;
@@ -59,7 +97,13 @@
             flex-direction: column;
             .buyContainer {
                 padding-left: 50px;
-                width: 300px;
+                width: 270px;
+
+                .cartCount {
+                    top: -20px;
+                    left: -20px;
+
+                }
 
                 .product__weigth {
                     color: #fff;
@@ -68,7 +112,23 @@
             }
            
             .product__composition {
+                margin-top: 20px;
+                display: flex;
+                padding: 0px 0px 25px 50px;
+                gap: 50px;
+                font-size: 13px;
 
+
+                .composition__block {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    color: #fff;
+
+                    .composition__count {
+                        font-weight: 700;
+                    }
+                }
             }
         }
     }

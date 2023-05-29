@@ -1,14 +1,13 @@
 import "../../../../../index.css";
 import styles from "./Product.module.scss";
-import { useReducer } from "react";
-import { productReducer } from "../../../../../reducer/productReducer";
-import { initialState } from "../../../../../reducer/initialState";
+import { useContext } from "react";
 import { Link, useParams } from "react-router-dom";
 import ToCartElement from "../ToCartElement/ToCartElement";
+import buy2 from "../../../../../assets/images/buy2.svg";
+import { AppContext } from "../../../../../App";
 
 const Product = () => {
-    const [state, dispatch] = useReducer(productReducer, initialState);
-
+    const {state, dispatch} = useContext(AppContext);
     const {url, id} = useParams();
 
     const {products} = state.find(el => el.link === url);
@@ -20,15 +19,22 @@ const Product = () => {
            cartCount,
            cartPrice,
            weight,
+           addInfo
 
         } = products.find(el => el.id === +id);
 
-    console.log(cartPrice);
+   Object.entries(addInfo).map(el => {
+    console.log(el);
+   })
 
     return(
         <div className="main">
             <div className={styles.page__container}>
-                <Link to = {`/${url}`}><span className={styles.goBack}>Вернуться назад</span></Link>
+                <div className={styles.backContainer}>
+                    <div className={styles.backArrow}></div>
+                    <Link to = {`/${url}`}><span className={styles.goBack}>Вернуться назад</span></Link>
+                </div>
+               
                 <div className={styles.product}>
                     <div className={styles.product__imageBlock}>
                         <img className={styles.image} src={image.src} alt={image.alt} />
@@ -50,9 +56,19 @@ const Product = () => {
                                     dispatch = {dispatch}
                                     id = {+id}
                                     category = {url}
+                                    addStyles = {styles.cartCount}
+                                    title = 'Корзина'
+                                    src = {buy2}
                                 />
                             </div>
-                            <div className={styles.product__composition}>sfdsfsdf</div>
+                            <div className={styles.product__composition}>
+                                {Object.entries(addInfo).map(el => 
+                                    <div className={styles.composition__block} key = {el}>
+                                         <span>{el[0]}</span>   
+                                         <span className={styles.composition__count}>{el[1]}</span>   
+                                    </div> 
+                                )}
+                            </div>
                         </div>
 
                     </div>

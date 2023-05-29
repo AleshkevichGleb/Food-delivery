@@ -1,14 +1,13 @@
 import styles from "./ProductsItems.module.css";
 import { Link, useParams } from "react-router-dom";
-import { useReducer } from "react";
+import { useContext } from "react";
 import ToCartElement from "./ToCartElement/ToCartElement";
-import { productReducer } from "../../../../reducer/productReducer";
-import { initialState } from "../../../../reducer/initialState";
 import Title from "../../../../common/Title/Title";
+import buy from "../../../../assets/images/buy.svg";
+import { AppContext } from "../../../../App";
 
 const ProductsItems = () => {
-    const [state, dispatch] = useReducer(productReducer, initialState);
-
+    const {state, dispatch} = useContext(AppContext);
     const {url} = useParams();
 
     
@@ -43,6 +42,8 @@ const ProductsItems = () => {
                                 productPrice = {product.price}
                                 category={link}
                                 id = {product.id}
+                                title = 'В корзину'
+                                src = {buy}
                             />
                         </div>
                     </div>
