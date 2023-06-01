@@ -23,17 +23,16 @@ const Product = () => {
 
         } = products.find(el => el.id === +id);
 
-   Object.entries(addInfo).map(el => {
-    console.log(el);
-   })
-
     return(
         <div className="main">
             <div className={styles.page__container}>
+            <Link to = {`/${url}`}>
                 <div className={styles.backContainer}>
                     <div className={styles.backArrow}></div>
-                    <Link to = {`/${url}`}><span className={styles.goBack}>Вернуться назад</span></Link>
-                </div>
+                    <span className={styles.goBack}>Вернуться назад</span>
+                </div>         
+            </Link>
+              
                
                 <div className={styles.product}>
                     <div className={styles.product__imageBlock}>
@@ -62,6 +61,7 @@ const Product = () => {
                                 />
                             </div>
                             <div className={styles.product__composition}>
+                                
                                 {Object.entries(addInfo).map(el => 
                                     <div className={styles.composition__block} key = {el}>
                                          <span>{el[0]}</span>   

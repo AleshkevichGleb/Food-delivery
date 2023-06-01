@@ -6,7 +6,7 @@ const Promotion = () => {
         <div className="main">
             <Title title='Акции'/>
         </div>
-    )
+    )       
 }
 
 export default Promotion;

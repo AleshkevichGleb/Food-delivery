@@ -24,7 +24,13 @@
     margin-right: 12.5%;
 }
 
-
+.profile {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    cursor: pointer;
+}
 @media(max-width: 1485px) {
     .header__container {
         padding: 0 10px;
