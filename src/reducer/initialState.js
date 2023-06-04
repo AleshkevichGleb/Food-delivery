@@ -94,7 +94,7 @@ export const initialState = [
         title:'ГОРЯЧИЕ ЗАКУСКИ',
         products: [
             {
-                id: 1,
+                id: 5,
                 title: "Ягненок (hot)",
                 description:'помидор, сыр фета, масло подсолнечное, капуста пекинская, перец сладкий красный, огурцы, оливки без косточек',
                 price: 620,
@@ -114,7 +114,7 @@ export const initialState = [
                 
             },
             {
-                id: 2,
+                id: 6,
                 title: "Индейка (hot)",
                 description:'помидор, сыр фета, масло подсолнечное, капуста пекинская, перец сладкий красный, огурцы, оливки без косточек',
                 price: 560,
@@ -133,7 +133,7 @@ export const initialState = [
                 }
             },
             {
-                id: 3,
+                id: 7,
                 title: "Гусь (hot)",
                 description:'Фаршированный яблоками',
                 price: 870,
@@ -152,7 +152,7 @@ export const initialState = [
                 }
             },
             {
-                id: 4,
+                id: 8,
                 title: "Утка (hot)",
                 description:'Фаршированная рисом, курагой и айвой',
                 price: 610,
@@ -178,7 +178,7 @@ export const initialState = [
         title:'МЯСНЫЕ БЛЮДА',
         products: [
             {
-                id: 1,
+                id: 9,
                 title: "Ягненок",
                 description:'помидор, сыр фета, масло подсолнечное, капуста пекинская, перец сладкий красный, огурцы, оливки без косточек',
                 price: 620,
@@ -198,7 +198,7 @@ export const initialState = [
                 
             },
             {
-                id: 2,
+                id: 10,
                 title: "Индейка",
                 description:'помидор, сыр фета, масло подсолнечное, капуста пекинская, перец сладкий красный, огурцы, оливки без косточек',
                 price: 560,
@@ -217,7 +217,7 @@ export const initialState = [
                 }
             },
             {
-                id: 3,
+                id: 11,
                 title: "Гусь",
                 description:'Фаршированный яблоками',
                 price: 870,
@@ -237,7 +237,7 @@ export const initialState = [
                 
             },
             {
-                id: 4,
+                id: 12,
                 title: "Утка",
                 description:'Фаршированная рисом, курагой и айвой',
                 price: 610,
@@ -263,7 +263,7 @@ export const initialState = [
         title:'СУПЫ',
         products: [
             {
-                id: 1,
+                id: 13,
                 title: "Ягненок",
                 description:'помидор, сыр фета, масло подсолнечное, капуста пекинская, перец сладкий красный, огурцы, оливки без косточек',
                 price: 620,
@@ -282,7 +282,7 @@ export const initialState = [
                 }
             },
             {
-                id: 2,
+                id: 14,
                 title: "Индейка",
                 description:'помидор, сыр фета, масло подсолнечное, капуста пекинская, перец сладкий красный, огурцы, оливки без косточек',
                 price: 560,
@@ -301,7 +301,7 @@ export const initialState = [
                 }
             },
             {
-                id: 3,
+                id: 15,
                 title: "Гусь",
                 description:'Фаршированный яблоками',
                 price: 870,
@@ -320,7 +320,7 @@ export const initialState = [
                 }
             },
             {
-                id: 4,
+                id: 16,
                 title: "Утка",
                 description:'Фаршированная рисом, курагой и айвой',
                 price: 610,
@@ -346,7 +346,7 @@ export const initialState = [
         title:'РЫБНЫЕ БЛЮДА',
         products: [
             {
-                id: 1,
+                id: 17,
                 title: "Ягненок",
                 description:'помидор, сыр фета, масло подсолнечное, капуста пекинская, перец сладкий красный, огурцы, оливки без косточек',
                 price: 620,
@@ -365,7 +365,7 @@ export const initialState = [
                 }
             },
             {
-                id: 2,
+                id: 18,
                 title: "Индейка",
                 description:'помидор, сыр фета, масло подсолнечное, капуста пекинская, перец сладкий красный, огурцы, оливки без косточек',
                 price: 560,
@@ -384,7 +384,7 @@ export const initialState = [
                 }
             },
             {
-                id: 3,
+                id: 19,
                 title: "Гусь",
                 description:'Фаршированный яблоками',
                 price: 870,
@@ -403,7 +403,7 @@ export const initialState = [
                 }
             },
             {
-                id: 4,
+                id: 20,
                 title: "Утка",
                 description:'Фаршированная рисом, курагой и айвой',
                 price: 610,
@@ -429,7 +429,7 @@ export const initialState = [
         title:'ГРИЛЬ МЕНЮ',
         products: [
             {
-                id: 1,
+                id: 21,
                 title: "Ягненок",
                 description:'помидор, сыр фета, масло подсолнечное, капуста пекинская, перец сладкий красный, огурцы, оливки без косточек',
                 price: 620,
@@ -448,7 +448,7 @@ export const initialState = [
                 }
             },
             {
-                id: 2,
+                id: 22,
                 title: "Индейка",
                 description:'помидор, сыр фета, масло подсолнечное, капуста пекинская, перец сладкий красный, огурцы, оливки без косточек',
                 price: 560,
@@ -467,7 +467,7 @@ export const initialState = [
                 }
             },
             {
-                id: 3,
+                id: 23,
                 title: "Гусь",
                 description:'Фаршированный яблоками',
                 price: 870,
@@ -481,7 +481,7 @@ export const initialState = [
                 
             },
             {
-                id: 4,
+                id: 24,
                 title: "Утка",
                 description:'Фаршированная рисом, курагой и айвой',
                 price: 610,
@@ -507,7 +507,7 @@ export const initialState = [
         title:'ФИРМЕННЫЕ БЛЮДА',
         products: [
             {
-                id: 1,
+                id: 25,
                 title: "Ягненок",
                 description:'помидор, сыр фета, масло подсолнечное, капуста пекинская, перец сладкий красный, огурцы, оливки без косточек',
                 price: 620,
@@ -526,7 +526,7 @@ export const initialState = [
                 }
             },
             {
-                id: 2,
+                id: 26,
                 title: "Индейка",
                 description:'помидор, сыр фета, масло подсолнечное, капуста пекинская, перец сладкий красный, огурцы, оливки без косточек',
                 price: 560,
@@ -545,7 +545,7 @@ export const initialState = [
                 }
             },
             {
-                id: 3,
+                id: 27,
                 title: "Гусь",
                 description:'Фаршированный яблоками',
                 price: 870,
@@ -564,7 +564,7 @@ export const initialState = [
                 }
             },
             {
-                id: 4,
+                id: 28,
                 title: "Утка",
                 description:'Фаршированная рисом, курагой и айвой',
                 price: 610,
@@ -590,7 +590,7 @@ export const initialState = [
         title:'НАПИТКИ',
         products: [
             {
-                id: 1,
+                id: 29,
                 title: "Ягненок",
                 description:'помидор, сыр фета, масло подсолнечное, капуста пекинская, перец сладкий красный, огурцы, оливки без косточек',
                 price: 620,
@@ -609,7 +609,7 @@ export const initialState = [
                 }
             },
             {
-                id: 2,
+                id: 30,
                 title: "Индейка",
                 description:'помидор, сыр фета, масло подсолнечное, капуста пекинская, перец сладкий красный, огурцы, оливки без косточек',
                 price: 560,
@@ -628,7 +628,7 @@ export const initialState = [
                 }
             },
             {
-                id: 3,
+                id: 31,
                 title: "Гусь",
                 description:'Фаршированный яблоками',
                 price: 870,
@@ -647,7 +647,7 @@ export const initialState = [
                 }
             },
             {
-                id: 4,
+                id: 32,
                 title: "Утка",
                 description:'Фаршированная рисом, курагой и айвой',
                 price: 610,

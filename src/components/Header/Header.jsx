@@ -58,27 +58,30 @@ const Header = () => {
                     <Input/>
                     <div className={active ? 'burger__menu active' : 'burger__menu'} onClick={() => setActive(!active)}>
                         <Contact text = "+7 (917) 510-57-59"/>
-                        <div className={active ? 'burger__nav active' : 'burger__nav'}>
-                            <FooterNav/>
-                        </div>
-                    </div>
-
-                    {!isHasUser 
-                    ?
-                         <div 
-                         className={styles.profile}
-                         onClick={() => setIsActiveForm(true)}
-                        > 
-                            <img src={profileImage} alt="profile" />
-                            <span>Войти</span>
-                         </div>
-                    :  
+                        
+                        {!isHasUser 
+                        ?
+                            <div 
+                                className={styles.profile}
+                                onClick={() => setIsActiveForm(true)}
+                            > 
+                                <img src={profileImage} alt="profile" />
+                                <span>Войти</span>
+                            </div>
+                        :  
                             <div className={styles.profile}> 
                                 <Link state = {true} to = '/profile'>
                                     <img src={profileImage} alt="profile" />
                                 </Link>
                             </div>
-                    }
+                        }
+
+                        <div className={active ? 'burger__nav active' : 'burger__nav'}>
+                            <FooterNav/>
+                        </div>
+                    </div>
+
+                    
                     <Cart items={fullCount}/>
                 </div>
             </div>

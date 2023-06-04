@@ -15,17 +15,21 @@ import AboutPage from "./components/AboutPage/AboutPage";
 import { productReducer } from "./reducer/productReducer";
 import { initialState } from "./reducer/initialState";
 import ProfilePage from "./components/ProfilePage/ProfilePage";
+import Preloader from "./common/Preloader/Preloader";
 
 export const AppContext = createContext()
 
 function App() {
   const [fullCount, setFullCount] = useState(0);
   const [state, dispatch] = useReducer(productReducer, initialState)
-  
   const [weather, setWeather] = useState({});
+  const [isPreloader, setIsPreloader] = useState(false);
+  const [basket, setBacket] = useState([]);
   
   useEffect(() => {
-    fetch("https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&current_weather=true&hourly=temperature_2m,relativehumidity_2m,windspeed_10m")
+    setIsPreloader(true);
+    // setTimeout(() => {
+      fetch("https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&current_weather=true&hourly=temperature_2m,relativehumidity_2m,windspeed_10m")
       .then((response) => response.json())
       .then(({current_weather}) => {
         const newObj = {
@@ -35,28 +39,35 @@ function App() {
         }
         setWeather({...newObj});
       }).catch(() => '')
-
+        .finally(() => setIsPreloader(false))
+    // },1000)
+    
   }, []);
 
   const {state: stateLocation} = useLocation();
 
   return (
     <>
-      <AppContext.Provider value={{fullCount, setFullCount, state, dispatch}}>
-          <Header/>
-          {!stateLocation && <Home/>}
-          <Routes>
-              <Route path = '/' element = {<ProductsItems/>}/>
-              <Route path = '/:url' element = {<ProductsItems/>}/>
-              <Route path = '/:url/:id' element = {<Product/>}/>
-              <Route path = '/cart' element = {<Cart/>}/>
-              <Route path = '/delivery' element = {<Delivery/>}/>
-              <Route path = '/promotion' element = {<Promotion/>}/>
-              <Route path = '/order' element = {<OrderPage/>}/>
-              <Route path = '/about' element = {<AboutPage/>}/>
-              <Route path = '/profile' element = {<ProfilePage/>}/>
-          </Routes>
-          <Footer weather = {weather}/>
+      <AppContext.Provider value={{fullCount, setFullCount, state, dispatch, basket, setBacket}}>
+          {isPreloader 
+          ? <Preloader/>
+          : <>
+            <Header/>
+            {!stateLocation && <Home/>}
+            <Routes>
+                <Route path = '/' element = {<ProductsItems/>}/>
+                <Route path = '/:url' element = {<ProductsItems/>}/>
+                <Route path = '/:url/:id' element = {<Product/>}/>
+                <Route path = '/cart' element = {<Cart/>}/>
+                <Route path = '/delivery' element = {<Delivery/>}/>
+                <Route path = '/promotion' element = {<Promotion/>}/>
+                <Route path = '/order' element = {<OrderPage/>}/>
+                <Route path = '/about' element = {<AboutPage/>}/>
+                <Route path = '/profile' element = {<ProfilePage/>}/>
+            </Routes>
+            <Footer weather = {weather}/>
+            </>
+          }
         </AppContext.Provider>
     </>
   );

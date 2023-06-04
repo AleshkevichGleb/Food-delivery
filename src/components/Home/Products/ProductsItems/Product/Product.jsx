@@ -1,7 +1,7 @@
 import "../../../../../index.css";
 import styles from "./Product.module.scss";
 import { useContext } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import ToCartElement from "../ToCartElement/ToCartElement";
 import buy2 from "../../../../../assets/images/buy2.svg";
 import { AppContext } from "../../../../../App";
@@ -9,29 +9,24 @@ import { AppContext } from "../../../../../App";
 const Product = () => {
     const {state, dispatch} = useContext(AppContext);
     const {url, id} = useParams();
+    const navigate = useNavigate();
 
     const {products} = state.find(el => el.link === url);
 
+    const product = products.find(el => el.id === +id);
     const {description,
-           title,
-           image,
-           price, 
-           cartCount,
-           cartPrice,
-           weight,
-           addInfo
-
-        } = products.find(el => el.id === +id);
-
+        title,
+        image,
+        weight,
+        addInfo
+     } = product;
     return(
         <div className="main">
             <div className={styles.page__container}>
-            <Link to = {`/${url}`}>
-                <div className={styles.backContainer}>
+                <div className={styles.backContainer} onClick={() => navigate(-1)}>
                     <div className={styles.backArrow}></div>
                     <span className={styles.goBack}>Вернуться назад</span>
                 </div>         
-            </Link>
               
                
                 <div className={styles.product}>
@@ -49,9 +44,7 @@ const Product = () => {
                             <div className={styles.buyContainer}>
                                 <span className={styles.product__weigth}>Вес: {weight}г.</span>
                                 <ToCartElement
-                                    productPrice={price}
-                                    cartPrice={cartPrice}
-                                    cartCount={cartCount}
+                                    product={product}
                                     dispatch = {dispatch}
                                     id = {+id}
                                     category = {url}

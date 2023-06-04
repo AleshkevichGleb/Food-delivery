@@ -3,13 +3,14 @@ import styles from "./Agrement.module.scss";
 import PageContainer from "../PageContainer/PageContainer";
 import CheckDataPopUp from "../CheckDataPopUp/CheckDataPopUp";
 
-const Agrement = ({data, handleData, isDisabled, setIsShowPopUp}) => {
+const Agrement = ({data, handleData, isDisabled, setIsShowPopUp, basket}) => {
 
     const sendData = (event) => {
         event.preventDefault();
         setIsShowPopUp(true)
         if(!isDisabled && data.agreement) {
             console.log(data);
+            console.log(basket);
         }
     }
     

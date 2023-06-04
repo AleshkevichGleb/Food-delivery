@@ -37,9 +37,7 @@ const ProductsItems = () => {
                             <span className={styles.item__description}>{product.description}</span>
                             <ToCartElement 
                                 dispatch = {dispatch} 
-                                cartPrice = {product.cartPrice}
-                                cartCount={product.cartCount}
-                                productPrice = {product.price}
+                                product={product}
                                 category={link}
                                 id = {product.id}
                                 title = 'В корзину'

@@ -20,6 +20,7 @@ const Signup = ({setIsActiveForm, setIsShowLogin}) => {
         event.preventDefault();
         try {
             await createUserWithEmailAndPassword(auth, authData.email, authData.password)
+            setIsActiveForm(false);
         } catch(err) {
             const message = err.message;
             setError(message)

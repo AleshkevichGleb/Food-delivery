@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "../../index.css";
 import styles from "./OrderPage.module.scss";
 import { Link } from "react-router-dom";
@@ -12,8 +12,12 @@ import Title from "../../common/Title/Title";
 import CheckDataPopUp from "./CheckDataPopUp/CheckDataPopUp";
 import sendData from "../../assets/images/sendData.svg"
 import errorSendData from "../../assets/images/errorSendData.png"
+import BackLink from "../../common/BackLink/BackLink";
+import { AppContext } from "../../App";
 
 const OrderPage = () => {
+    const {basket} = useContext(AppContext);
+
     const initialState = {
         name: '',
         phone: '',
@@ -44,11 +48,11 @@ const OrderPage = () => {
     useEffect(() => {
         const show = Object.values(error).find(el => el !== '')||
         data.name === '' || data.phone === '' || data.address.street === '' || data.payment.surrender_of_money === '' ||
-        data.address.house === '' || data.address.streetRestaraunt === 'not indicated' || data.time === '';
+        data.address.house === '' || data.address.streetRestaraunt === 'not indicated' || data.time === '' || !data.agreement ;
 
         setIsDisabled(show)
     }, [error, data.name, data.phone, data.address.street, data.address.house , 
-        data.address.streetRestaraunt, data.time, data.payment.surrender_of_money])
+        data.address.streetRestaraunt, data.time, data.payment.surrender_of_money, data.agreement])
 
     const handleData = (event) => {
         const {id, value, name, type, checked} = event.target;
@@ -90,7 +94,7 @@ const OrderPage = () => {
         <div className="main">
             <div className={styles.orderPage}>
                 <div className={styles.order__container}>
-                    <Link to = "/cart" state = {true}><span className={styles.back}>в корзину</span></Link>
+                    <BackLink title = 'в корзину'/>
                     <Title title = 'Оформление заказа'/>
 
                     <form className={styles.form}>
@@ -98,7 +102,7 @@ const OrderPage = () => {
                         <Delivery data = {data} setData = {setData} handleData = {handleData} error = {error}/>
                         <Payment data = {data} setData = {setData} handleData = {handleData} error = {error}/>
                         <TimeToDelivery data = {data} handleData={handleData} error = {error}/>
-                        <Agrement data = {data} handleData = {handleData} setIsShowPopUp = {setIsShowPopUp} isDisabled = {isDisabled} setIsDisabled = {setIsDisabled}/>
+                        <Agrement basket = {basket} data = {data} handleData = {handleData} setIsShowPopUp = {setIsShowPopUp} isDisabled = {isDisabled} setIsDisabled = {setIsDisabled}/>
                     </form>
 
                     <pre style={{background:'#fff'}}>

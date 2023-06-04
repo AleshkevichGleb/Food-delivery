@@ -40,6 +40,10 @@ h1 {
     background-color:#353231;  
 }
 
+.burger__menu {
+    display: flex;
+    align-items: center;
+}
 @media (max-width: 843px) {
 
     .main {
@@ -60,6 +64,7 @@ h1 {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        gap: 20px;
         transition: .2s linear;
     }
 

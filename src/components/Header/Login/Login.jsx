@@ -21,8 +21,8 @@ const Login = ({setIsActiveForm, setIsShowLogin}) => {
         event.preventDefault();
 
         await signInWithEmailAndPassword(auth, authData.email, authData.password)
-                .then(responce => {
-                    console.log(responce);
+                .then(() => {
+                    setIsActiveForm(false);
                 }).catch(err => {
                     const message = err.message;
                     setError(message);

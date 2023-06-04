@@ -9,36 +9,6 @@
     }
 }
 
-.back {
-    font-size: 16px;
-    color: #fff;
-    font-weight: 700;
-    padding-left: 11.5px;
-    position: relative;
-}
-
-.back:hover{
-    color: #b4b3b3;
-}
-
-.back:hover::before {
-    border: 2px solid #b4b3b3;
-     border-top: none;
-    border-right: none;
-}
-.back::before {
-    content: '';
-    position: absolute;
-    width: 7px;
-    height: 7px;
-    border: 2px solid #fff;
-    top: 7px;
-    left: 0;
-    border-top: none;
-    border-right: none;
-    transform: rotate(45deg);
-}
-
 .title {
     margin-top: 35px;
     font-size: 32px;

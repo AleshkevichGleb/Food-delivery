@@ -25,15 +25,28 @@
 }
 
 .profile {
-    margin-left: auto;
+    margin-left: 30px;
     display: flex;
     align-items: center;
     color: #fff;
     cursor: pointer;
+    font-weight: 700;
+    gap: 10px;
+    font-size: 18px;
+    border-left: 1px solid #635C5A;
+    padding-left: 25px;
+    height: 50%;
 }
 @media(max-width: 1485px) {
     .header__container {
         padding: 0 10px;
+    }
+}
+
+@media(max-width: 1222px) {
+    .profile {
+        padding-left: 10px;
+        margin-right: 10px;
     }
 }
 
@@ -54,4 +67,11 @@
         position: relative;
         z-index: 2;
     }   
+    .profile {
+        border: none;
+        order: -1;
+        margin-left: 0;
+        height: auto;
+        font-size: 22px;
+    }
 }
