@@ -15,9 +15,7 @@ import { Link } from "react-router-dom";
 
 const Cart = memo(() => {
     const {state, dispatch, setFullCount, fullCount, basket, setBacket} = useContext(AppContext);
-    // console.log(state);
-  
-   
+
 
     useEffect(() => {
         let editState = [];
