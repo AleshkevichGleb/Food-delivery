@@ -11,11 +11,14 @@ import Button from "../../common/Button/Button";
 import { BACK_UP_COUNT_TO_NULL } from "../../reducer/types";
 import CartOrder from "./CartOrder/CartOrder";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { backUpCountToNull } from "../../redux/productReducer";
 
 
 const Cart = memo(() => {
-    const {state, dispatch, setFullCount, fullCount, basket, setBacket} = useContext(AppContext);
-
+    const {setFullCount, fullCount, basket, setBacket} = useContext(AppContext);
+    const state = useSelector(state => state.productCounter);
+    const dispatch = useDispatch();
 
     useEffect(() => {
         let editState = [];
@@ -37,8 +40,8 @@ const Cart = memo(() => {
         basket.map(el => {
             if(el.id === +currentTarget.id) setFullCount(fullCount-el.cartCount);
         })
-
-        dispatch({type: BACK_UP_COUNT_TO_NULL, category: link, id: currentTarget.id})       
+        dispatch(backUpCountToNull({category: link, id: currentTarget.id}));
+        // dispatch({type: BACK_UP_COUNT_TO_NULL, category: link, id: currentTarget.id})       
     }
 
     return(

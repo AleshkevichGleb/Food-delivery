@@ -5,6 +5,7 @@ import { BACK_UP_COUNT_TO_NULL, DECREASE__PRICE, INCREASE__PRICE } from "../../.
 import Button from "../../../../../common/Button/Button";
 import { useContext } from "react";
 import { AppContext } from "../../../../../App";
+import { decreasePrice, increasePrice } from "../../../../../redux/productReducer";
 
 const ToCartElement = ({product, dispatch, category, addStyles, title, src, flag , addStyles2}) => {
     const {price, cartCount, cartPrice, id} = product;
@@ -12,7 +13,9 @@ const ToCartElement = ({product, dispatch, category, addStyles, title, src, flag
     const [isVisible, setIsVisible] = useState(cartPrice >= price);
 
     const incrementCountOfProduct = ({currentTarget}) => {
-        dispatch({type: INCREASE__PRICE, category: category, id: currentTarget.id});
+        const product = {category: category, id: currentTarget.id}
+        dispatch(increasePrice(product))
+        // dispatch({type: INCREASE__PRICE, category: category, id: currentTarget.id});
         setFullCount(fullCount + 1)
     }
 
@@ -21,7 +24,8 @@ const ToCartElement = ({product, dispatch, category, addStyles, title, src, flag
             setIsVisible(!isVisible);
         }    
         setFullCount(fullCount - 1)
-        dispatch({type: DECREASE__PRICE, category: category, id: currentTarget.id });
+        const product = {category: category, id: currentTarget.id}
+        dispatch(decreasePrice(product))
 
     }
     

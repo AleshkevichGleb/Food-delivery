@@ -5,9 +5,12 @@ import ToCartElement from "./ToCartElement/ToCartElement";
 import Title from "../../../../common/Title/Title";
 import buy from "../../../../assets/images/buy.svg";
 import { AppContext } from "../../../../App";
+import { useDispatch, useSelector } from "react-redux";
 
 const ProductsItems = () => {
-    const {state, dispatch} = useContext(AppContext);
+    // const {state, dispatch} = useContext(AppContext);
+    const state = useSelector(state => state.productCounter)
+    const dispatch = useDispatch();
     const {url} = useParams();
 
     
