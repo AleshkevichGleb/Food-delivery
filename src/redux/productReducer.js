@@ -1,4 +1,4 @@
-import { initialState } from "../reducer/initialState";
+import { initialState } from "./initialState";
 
 const INCREASE__PRICE = 'INCREASE PRICE';
 const DECREASE__PRICE = 'DECREASE PRICE';
@@ -8,9 +8,8 @@ export const increasePrice = (payload) => ({type: INCREASE__PRICE, payload});
 export const decreasePrice = (payload) => ({type: DECREASE__PRICE, payload});
 export const backUpCountToNull = (payload) => ({type: BACK_UP_COUNT_TO_NULL, payload});
 
-const defaultState = initialState;
 
-const produceReducer = (state = defaultState, action) => {
+const produceReducer = (state = initialState, action) => {
     
     switch(action.type) {
         case INCREASE__PRICE: {

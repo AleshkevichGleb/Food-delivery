@@ -1,6 +1,6 @@
 import styles from "./ProductsTitle.module.css"; 
 import { Link, useLocation } from "react-router-dom";
-import { initialState } from "../../../../reducer/initialState";
+import { initialState } from "../../../../redux/initialState";
 
 const ProductsTitle = () => {
 

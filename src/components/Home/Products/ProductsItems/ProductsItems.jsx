@@ -1,15 +1,12 @@
 import styles from "./ProductsItems.module.css";
 import { Link, useParams } from "react-router-dom";
-import { useContext } from "react";
 import ToCartElement from "./ToCartElement/ToCartElement";
 import Title from "../../../../common/Title/Title";
 import buy from "../../../../assets/images/buy.svg";
-import { AppContext } from "../../../../App";
 import { useDispatch, useSelector } from "react-redux";
 
 const ProductsItems = () => {
-    // const {state, dispatch} = useContext(AppContext);
-    const state = useSelector(state => state.productCounter)
+    const state = useSelector(state => state.productReducer)
     const dispatch = useDispatch();
     const {url} = useParams();
 

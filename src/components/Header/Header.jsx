@@ -7,19 +7,17 @@ import "../../index.css";
 import { useEffect, useState } from "react";
 import Burger from "./Burger/Burger";
 import FooterNav from "../Footer/FooterNav/FooterNav";
-import { useContext } from "react";
-import { AppContext } from "../../App";
 import profileImage from "../../assets/images/Profile.svg";
-import FormAutarization from "./FormAutarization/FormAutarization";
 import Signup from "./Signup/Signup";
 import Login from "./Login/Login";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../../firebase/firebase";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Header = () => {
 
-    const {fullCount} = useContext(AppContext);
+    const fullCartCount = useSelector(state => state.cartCountReducer.count)
     const [active, setActive] = useState(false);
 
     const [isActiveForm, setIsActiveForm] = useState(false); 
@@ -82,7 +80,7 @@ const Header = () => {
                     </div>
 
                     
-                    <Cart items={fullCount}/>
+                    <Cart items={fullCartCount}/>
                 </div>
             </div>
         </>

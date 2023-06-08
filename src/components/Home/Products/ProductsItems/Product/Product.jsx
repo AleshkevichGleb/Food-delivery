@@ -1,13 +1,13 @@
 import "../../../../../index.css";
 import styles from "./Product.module.scss";
-import { useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import ToCartElement from "../ToCartElement/ToCartElement";
 import buy2 from "../../../../../assets/images/buy2.svg";
-import { AppContext } from "../../../../../App";
+import { useDispatch, useSelector } from "react-redux";
 
 const Product = () => {
-    const {state, dispatch} = useContext(AppContext);
+    const state = useSelector(state => state.productReducer)
+    const dispatch = useDispatch();
     const {url, id} = useParams();
     const navigate = useNavigate();
 

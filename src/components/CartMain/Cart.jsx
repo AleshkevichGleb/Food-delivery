@@ -1,47 +1,47 @@
 import styles from "./Cart.module.css";
 import Title from "../../common/Title/Title";
-import ButtonLink from "../../common/ButtonLink/ButtonLink";
 import { constants } from "../../constants/constants";
 import BackLink from "../../common/BackLink/BackLink";
-import { memo, useContext, useEffect, useState } from "react";
+import { memo, useContext, useEffect } from "react";
 import { AppContext } from "../../App";
 import EmptyBasket from "./EmptyBasket/EmptyBasket";
 import ToCartElement from "../Home/Products/ProductsItems/ToCartElement/ToCartElement";
 import Button from "../../common/Button/Button";
-import { BACK_UP_COUNT_TO_NULL } from "../../reducer/types";
 import CartOrder from "./CartOrder/CartOrder";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { backUpCountToNull } from "../../redux/productReducer";
+import { decreaseCount } from "../../redux/cartCountReducer";
 
 
 const Cart = memo(() => {
-    const {setFullCount, fullCount, basket, setBacket} = useContext(AppContext);
-    const state = useSelector(state => state.productCounter);
+    const {basket, setBacket} = useContext(AppContext);
+    const state = useSelector(state => state.productReducer);
     const dispatch = useDispatch();
-
+    
     useEffect(() => {
         let editState = [];
-        state.map(type => {
+        state.forEach(type => {
             const {link} = type;
-            type.products.map(el=> {
+            type.products.forEach(el=> {
                 if(el.cartCount > 0) editState = [...editState, {...el, link}];
             })
         })
-        console.log(basket);
+
         setBacket(editState);
 
        
-    }, [state])
+    }, [state, basket, setBacket])
 
     const removeFromBasket = ({currentTarget}) => {
         const {link} = basket.find(el => el.id === +currentTarget.id);
 
-        basket.map(el => {
-            if(el.id === +currentTarget.id) setFullCount(fullCount-el.cartCount);
+        basket.forEach(el => {
+            if(el.id === +currentTarget.id) dispatch(decreaseCount(el.cartCount))
         })
+
         dispatch(backUpCountToNull({category: link, id: currentTarget.id}));
-        // dispatch({type: BACK_UP_COUNT_TO_NULL, category: link, id: currentTarget.id})       
+
     }
 
     return(
