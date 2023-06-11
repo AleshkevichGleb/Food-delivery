@@ -1,6 +1,8 @@
+import { useSelector } from "react-redux";
 import styles from "./FooterWeather.module.css"
 
-const FooterWeather = ({weather}) => {
+const FooterWeather = () => {
+    const {weather, error} = useSelector(state => state.weather)
     const date = String(weather.time).match(/\d{4}-\d{2}-\d{2}/);
     const temperature = weather.temperature;
 
@@ -21,8 +23,8 @@ const FooterWeather = ({weather}) => {
     if(temperature >= 10 && temperature < 20) tempStyle = 'rgb(77, 162, 105)';
     if(temperature >= 20) tempStyle = 'orange';
 
-    if(!Object.keys(weather).length) {
-        return '';
+    if(error) {
+        return <span className={styles.error}>Weather: {error}</span>;
     }
 
     return(

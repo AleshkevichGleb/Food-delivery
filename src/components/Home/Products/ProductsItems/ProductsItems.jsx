@@ -6,10 +6,9 @@ import buy from "../../../../assets/images/buy.svg";
 import { useDispatch, useSelector } from "react-redux";
 
 const ProductsItems = () => {
-    const state = useSelector(state => state.productReducer)
+    const state = useSelector(state => state.productCountChange)
     const dispatch = useDispatch();
     const {url} = useParams();
-
     
     const {title, products, link} = state.find(type => {
         if(url === undefined) {

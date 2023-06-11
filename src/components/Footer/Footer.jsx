@@ -3,7 +3,7 @@ import FooterNav from "./FooterNav/FooterNav";
 import FooterSettings from "./FooterSettings/FooterSettings";
 import FooterWeather from "./FooterWeather/FooterWeather";
 
-const Footer = ({weather}) => {
+const Footer = () => {
 
 
     return(
@@ -15,7 +15,7 @@ const Footer = ({weather}) => {
                 <div className={styles.footer__info}>
                     <FooterSettings/>
                     <FooterNav/>
-                    <FooterWeather weather = {weather}/>
+                    <FooterWeather/>
                 </div>
             </div>
         </div>

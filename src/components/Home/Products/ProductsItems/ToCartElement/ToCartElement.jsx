@@ -1,8 +1,8 @@
 import styles from "./ToCartElement.module.css";
 import {useState } from "react";
 import Button from "../../../../../common/Button/Button";
-import { decreasePrice, increasePrice } from "../../../../../redux/productReducer";
-import { decreaseCount, increaseCount } from "../../../../../redux/cartCountReducer";
+import { decrease_price, increase_price } from "../../../../../reduxToolkit/productSlice";
+import { decrease_cart_count, increase_cart_count } from "../../../../../reduxToolkit/fullCartCountSlice";
 
 const ToCartElement = ({product, dispatch, category, addStyles, title, src, flag , addStyles2}) => {
     const {price, cartCount, cartPrice, id} = product;
@@ -10,18 +10,17 @@ const ToCartElement = ({product, dispatch, category, addStyles, title, src, flag
 
     const incrementCountOfProduct = ({currentTarget}) => {
         const product = {category: category, id: currentTarget.id}
-        dispatch(increasePrice(product))
-        dispatch(increaseCount(1))
+        dispatch(increase_price(product))
+        dispatch(increase_cart_count(1))
     }
 
     const decrementCountOfProduct = ({currentTarget}) => {
         if(cartCount === 1) {
             setIsVisible(!isVisible);
         }    
-        dispatch(decreaseCount(1))
         const product = {category: category, id: currentTarget.id}
-        dispatch(decreasePrice(product))
-
+        dispatch(decrease_price(product))
+        dispatch(decrease_cart_count(1))
     }
     
     return(

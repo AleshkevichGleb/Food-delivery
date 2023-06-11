@@ -14,32 +14,29 @@ import Product from "./components/Home/Products/ProductsItems/Product/Product";
 import AboutPage from "./components/AboutPage/AboutPage";
 import ProfilePage from "./components/ProfilePage/ProfilePage";
 import Preloader from "./common/Preloader/Preloader";
+import { useDispatch, useSelector } from "react-redux";
+import { getWeather } from "./reduxToolkit/weatherSlice";
 
 export const AppContext = createContext()
 
 function App() {
-  const [fullCount, setFullCount] = useState(0);
-  const [weather, setWeather] = useState({});
   const [isPreloader, setIsPreloader] = useState(false);
   const [basket, setBacket] = useState([]);
-  
+  const {status, weather, error} = useSelector(state => state.weather);
+  const dispatch = useDispatch();
+
   useEffect(() => {
     setIsPreloader(true);
-    // setTimeout(() => {
-      fetch("https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&current_weather=true&hourly=temperature_2m,relativehumidity_2m,windspeed_10m")
-      .then((response) => response.json())
-      .then(({current_weather}) => {
-        const newObj = {
-          city: 'Minsk',
-          temperature: current_weather.temperature,
-          time: current_weather.time,
-        }
-        setWeather({...newObj});
-      }).catch(() => '')
-        .finally(() => setIsPreloader(false))
-    // },1000)
-    
-  }, []);
+    if(status === "idle") {
+      dispatch(getWeather()); 
+    } 
+    if(status === 'failed') {
+      setIsPreloader(false)
+    }
+    if(status === 'succeeded') {
+      setIsPreloader(false)
+    }
+  }, [status, dispatch]);
 
   const {state: stateLocation} = useLocation();
 
@@ -62,7 +59,7 @@ function App() {
                 <Route path = '/about' element = {<AboutPage/>}/>
                 <Route path = '/profile' element = {<ProfilePage/>}/>
             </Routes>
-            <Footer weather = {weather}/>
+            <Footer weather = {weather} error = {error}/>
             </>
           }
         </AppContext.Provider>

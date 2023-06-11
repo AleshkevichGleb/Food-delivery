@@ -16,8 +16,8 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const Header = () => {
-
-    const fullCartCount = useSelector(state => state.cartCountReducer.count)
+    const fullCartCount = useSelector(state => state.fullCountCartChange.count);
+    // console.log();
     const [active, setActive] = useState(false);
 
     const [isActiveForm, setIsActiveForm] = useState(false); 

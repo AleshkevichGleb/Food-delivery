@@ -6,20 +6,22 @@ import buy2 from "../../../../../assets/images/buy2.svg";
 import { useDispatch, useSelector } from "react-redux";
 
 const Product = () => {
-    const state = useSelector(state => state.productReducer)
+    const state = useSelector(state => state.productCountChange)
     const dispatch = useDispatch();
+    
     const {url, id} = useParams();
     const navigate = useNavigate();
 
     const {products} = state.find(el => el.link === url);
-
     const product = products.find(el => el.id === +id);
-    const {description,
-        title,
-        image,
-        weight,
-        addInfo
-     } = product;
+    
+    const { description,
+            title,
+            image,
+            weight,
+            addInfo
+    } = product;
+
     return(
         <div className="main">
             <div className={styles.page__container}>

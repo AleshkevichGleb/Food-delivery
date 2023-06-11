@@ -10,13 +10,13 @@ import Button from "../../common/Button/Button";
 import CartOrder from "./CartOrder/CartOrder";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { backUpCountToNull } from "../../redux/productReducer";
-import { decreaseCount } from "../../redux/cartCountReducer";
+import { backup_count_to_null } from "../../reduxToolkit/productSlice";
+import { decrease_cart_count } from "../../reduxToolkit/fullCartCountSlice";
 
 
 const Cart = memo(() => {
     const {basket, setBacket} = useContext(AppContext);
-    const state = useSelector(state => state.productReducer);
+    const state = useSelector(state => state.productCountChange);
     const dispatch = useDispatch();
     
     useEffect(() => {
@@ -31,17 +31,14 @@ const Cart = memo(() => {
         setBacket(editState);
 
        
-    }, [state, basket, setBacket])
+    }, [state, setBacket])
 
     const removeFromBasket = ({currentTarget}) => {
         const {link} = basket.find(el => el.id === +currentTarget.id);
-
         basket.forEach(el => {
-            if(el.id === +currentTarget.id) dispatch(decreaseCount(el.cartCount))
+            if(el.id === +currentTarget.id) dispatch(decrease_cart_count(el.cartCount))
         })
-
-        dispatch(backUpCountToNull({category: link, id: currentTarget.id}));
-
+        dispatch(backup_count_to_null({category: link, id: currentTarget.id}));
     }
 
     return(

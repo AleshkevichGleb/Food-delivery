@@ -10,7 +10,7 @@ const Cart = ({items}) => {
             <span className={styles.cart__title}>{constants.basket}</span>
             <div className={styles.cart__items}>
                 <span className={styles.cart__count}>{items}</span>
-                <img className={styles.cart__image} src = {buyImage}/>
+                <img className={styles.cart__image} src = {buyImage} alt = "cart" />
             </div>   
         </Link>
     )
