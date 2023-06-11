@@ -2,8 +2,7 @@ import styles from "./Cart.module.css";
 import Title from "../../common/Title/Title";
 import { constants } from "../../constants/constants";
 import BackLink from "../../common/BackLink/BackLink";
-import { memo, useContext, useEffect } from "react";
-import { AppContext } from "../../App";
+import { memo, useEffect, useState } from "react";
 import EmptyBasket from "./EmptyBasket/EmptyBasket";
 import ToCartElement from "../Home/Products/ProductsItems/ToCartElement/ToCartElement";
 import Button from "../../common/Button/Button";
@@ -15,7 +14,7 @@ import { decrease_cart_count } from "../../reduxToolkit/fullCartCountSlice";
 
 
 const Cart = memo(() => {
-    const {basket, setBacket} = useContext(AppContext);
+    const [basket, setBacket] = useState([]);
     const state = useSelector(state => state.productCountChange);
     const dispatch = useDispatch();
     

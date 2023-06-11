@@ -9,7 +9,6 @@ import ProductsItems from "./components/Home/Products/ProductsItems/ProductsItem
 import Delivery from "./components/Delivery/Delivery";
 import Promotion from "./components/Promotion/Promotion";
 import OrderPage from "./components/OrderPage/OrderPage";
-import { createContext } from "react";
 import Product from "./components/Home/Products/ProductsItems/Product/Product";
 import AboutPage from "./components/AboutPage/AboutPage";
 import ProfilePage from "./components/ProfilePage/ProfilePage";
@@ -17,11 +16,8 @@ import Preloader from "./common/Preloader/Preloader";
 import { useDispatch, useSelector } from "react-redux";
 import { getWeather } from "./reduxToolkit/weatherSlice";
 
-export const AppContext = createContext()
-
 function App() {
   const [isPreloader, setIsPreloader] = useState(false);
-  const [basket, setBacket] = useState([]);
   const {status, weather, error} = useSelector(state => state.weather);
   const dispatch = useDispatch();
 
@@ -42,7 +38,6 @@ function App() {
 
   return (
     <>
-      <AppContext.Provider value={{basket, setBacket}}>
           {isPreloader 
           ? <Preloader/>
           : <>
@@ -62,7 +57,6 @@ function App() {
             <Footer weather = {weather} error = {error}/>
             </>
           }
-        </AppContext.Provider>
     </>
   );
 }

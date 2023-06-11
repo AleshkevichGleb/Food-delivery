@@ -1,7 +1,6 @@
-import { useContext, useEffect, useState } from "react";
+import {useEffect, useState } from "react";
 import "../../index.css";
 import styles from "./OrderPage.module.scss";
-import { Link } from "react-router-dom";
 import ContactInfo from "./ContactInfo/ContactInfo";
 import Delivery from "./Delivery/Delivery";
 import Payment from "./Payment/Payment";
@@ -13,10 +12,8 @@ import CheckDataPopUp from "./CheckDataPopUp/CheckDataPopUp";
 import sendData from "../../assets/images/sendData.svg"
 import errorSendData from "../../assets/images/errorSendData.png"
 import BackLink from "../../common/BackLink/BackLink";
-import { AppContext } from "../../App";
 
 const OrderPage = () => {
-    const {basket} = useContext(AppContext);
 
     const initialState = {
         name: '',
@@ -102,7 +99,7 @@ const OrderPage = () => {
                         <Delivery data = {data} setData = {setData} handleData = {handleData} error = {error}/>
                         <Payment data = {data} setData = {setData} handleData = {handleData} error = {error}/>
                         <TimeToDelivery data = {data} handleData={handleData} error = {error}/>
-                        <Agrement basket = {basket} data = {data} handleData = {handleData} setIsShowPopUp = {setIsShowPopUp} isDisabled = {isDisabled} setIsDisabled = {setIsDisabled}/>
+                        <Agrement data = {data} handleData = {handleData} setIsShowPopUp = {setIsShowPopUp} isDisabled = {isDisabled} setIsDisabled = {setIsDisabled}/>
                     </form>
 
                     <pre style={{background:'#fff'}}>
