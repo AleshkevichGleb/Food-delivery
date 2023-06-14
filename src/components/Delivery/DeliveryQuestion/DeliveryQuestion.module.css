@@ -21,10 +21,11 @@
 .item__title__text {
     font-size: 17px;
     font-weight: 600;
+    padding-right: 10px;
 }
 
 .delivery__change_in {
-    border: 1px solid #fff;
+    border: 2px solid #fff;
     width: 10px;
     height: 10px;
     border-top: none;
@@ -34,7 +35,7 @@
 }
 
 .delivery__change__out {
-    border: 1px solid #fff;
+    border: 2px solid #fff;
     width: 10px;
     height: 10px;
     border-top: none;
@@ -55,4 +56,10 @@
     overflow: hidden;
     transition: all .3s cubic-bezier(0.19, 1, 0.22, 1);
     background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
+}
+
+@media(max-width: 767.98px) {
+    .delivery__block {
+        width: 100%;
+    }
 }

@@ -50,6 +50,13 @@
     }
 }
 
+@media(max-width: 767.98px) {
+    .delivery {
+        flex-direction: column;
+        gap: 50px;
+    }
+}
+
 @media(max-width:723px) {
     .delivery__container {
         margin: 0 10px;

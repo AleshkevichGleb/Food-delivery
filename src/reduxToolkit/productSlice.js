@@ -1,21 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { initialState } from "../data/initialState";
 
-const findProduct = (state, action, flag) => {
+const findProduct = (state, action) => {
     let product = null;
 
     const {category, id} = action.payload
     state.forEach(type => {
         if(category === type.link) {
             type.products.forEach(elem => {
-                if(flag) {
-                    if(elem.id+99 === +id) {
-                        product = elem;
-                    }
-                }else {
-                    if(elem.id === +id) {
-                        product = elem;
-                    }
+                if(elem.id === +id || elem.id+99 === +id) {
+                    product = elem;
                 }
             })
         }
@@ -34,7 +28,7 @@ const productSlice = createSlice({
             product.cartPrice +=product.price;
         },
         decrease_price: (state, action) => {
-            const product = findProduct(state, action, 'flag');
+            const product = findProduct(state, action);
             product.cartCount -= 1;
             product.cartPrice -= product.price;
         },

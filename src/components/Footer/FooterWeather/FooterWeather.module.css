@@ -4,6 +4,7 @@
     color: #fff;
     font-weight: 700;
     gap: 10px;
+    min-width: 120px;
 }
 
 .error {

@@ -9,7 +9,6 @@ const Delivery = ({data, setData, handleData, error}) => {
     
     const [isDelivery, setIsDelivery] = useState(true);
 
-
     return(
         <PageContainer title = '2. Доставка'>
             <div className={styles.form__group}>
