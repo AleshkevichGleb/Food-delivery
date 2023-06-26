@@ -10,8 +10,7 @@ import CartOrder from "./CartOrder/CartOrder";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { backup_count_to_null } from "../../reduxToolkit/productSlice";
-import { decrease_cart_count } from "../../reduxToolkit/fullCartCountSlice";
-
+import { calc_cart_count, decrease_cart_count } from "../../reduxToolkit/fullCartCountSlice";
 
 const Cart = memo(() => {
     const [basket, setBacket] = useState([]);
@@ -20,7 +19,9 @@ const Cart = memo(() => {
     
     useEffect(() => {
         let editState = [];
-        state.forEach(type => {
+        let storage = JSON.parse(localStorage.getItem('products'));
+            
+        storage.forEach(type => {
             const {link} = type;
             type.products.forEach(el=> {
                 if(el.cartCount > 0) editState = [...editState, {...el, link}];
@@ -28,16 +29,17 @@ const Cart = memo(() => {
         })
 
         setBacket(editState);
-
-       
-    }, [state, setBacket])
+        dispatch(calc_cart_count())
+    }, [state, dispatch])
 
     const removeFromBasket = ({currentTarget}) => {
         const {link} = basket.find(el => el.id === +currentTarget.id);
         basket.forEach(el => {
-            if(el.id === +currentTarget.id) dispatch(decrease_cart_count(el.cartCount))
+            if(el.id === +currentTarget.id) {
+                dispatch(backup_count_to_null({category: link, id: currentTarget.id}));
+            }
         })
-        dispatch(backup_count_to_null({category: link, id: currentTarget.id}));
+       
     }
 
     return(

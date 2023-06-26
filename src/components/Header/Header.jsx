@@ -13,13 +13,14 @@ import Login from "./Login/Login";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../../firebase/firebase";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { calc_cart_count } from "../../reduxToolkit/fullCartCountSlice";
 
 const Header = () => {
     const fullCartCount = useSelector(state => state.fullCountCartChange.count);
     // console.log();
     const [active, setActive] = useState(false);
-
+    const dispatch = useDispatch();
     const [isActiveForm, setIsActiveForm] = useState(false); 
     const [isShowLogin, setIsShowLogin] = useState(true)
     const [isHasUser, setIsHasUser] = useState(false);

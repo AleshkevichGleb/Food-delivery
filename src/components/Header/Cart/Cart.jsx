@@ -9,7 +9,7 @@ const Cart = ({items}) => {
         <Link to = '/cart' state = {true} className= {styles.cart}>
             <span className={styles.cart__title}>{constants.basket}</span>
             <div className={styles.cart__items}>
-                <span className={styles.cart__count}>{items}</span>
+                <span className={styles.cart__count}>{items.toString()}</span>
                 <img className={styles.cart__image} src = {buyImage} alt = "cart" />
             </div>   
         </Link>

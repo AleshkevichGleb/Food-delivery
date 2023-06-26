@@ -15,23 +15,35 @@ import ProfilePage from "./components/ProfilePage/ProfilePage";
 import Preloader from "./common/Preloader/Preloader";
 import { useDispatch, useSelector } from "react-redux";
 import { getWeather } from "./reduxToolkit/weatherSlice";
+import { calc_cart_count } from "./reduxToolkit/fullCartCountSlice";
 
 function App() {
   const [isPreloader, setIsPreloader] = useState(false);
   const {status, weather, error} = useSelector(state => state.weather);
+  const products = useSelector(state => state.productCountChange)
+  
+ 
   const dispatch = useDispatch();
 
-  useEffect(() => {
+  useEffect( () => {
     setIsPreloader(true);
+    const storage = JSON.parse(localStorage.getItem('products'));
+    if(storage === null || !storage.length ) {
+      localStorage.setItem('products', JSON.stringify(products))
+    }
+
     if(status === "idle") {
       dispatch(getWeather()); 
-    } 
+    }
+
     if(status === 'failed') {
       setIsPreloader(false)
     }
     if(status === 'succeeded') {
       setIsPreloader(false)
     }
+    // console.log(localStorage.getItem('products'));
+    // dispatch(calc_cart_count())
   }, [status, dispatch]);
 
   const {state: stateLocation} = useLocation();

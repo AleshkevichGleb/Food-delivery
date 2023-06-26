@@ -4,9 +4,11 @@ import ToCartElement from "./ToCartElement/ToCartElement";
 import Title from "../../../../common/Title/Title";
 import buy from "../../../../assets/images/buy.svg";
 import { useDispatch, useSelector } from "react-redux";
+import { calc_cart_count } from "../../../../reduxToolkit/fullCartCountSlice";
+import { useEffect } from "react";
 
 const ProductsItems = () => {
-    const state = useSelector(state => state.productCountChange)
+    const state = JSON.parse(localStorage.getItem('products'));
     const dispatch = useDispatch();
     const {url} = useParams();
     
@@ -16,6 +18,11 @@ const ProductsItems = () => {
         }
         return type.link === url
     });
+
+    useEffect(() => {
+        dispatch(calc_cart_count())
+    }, [dispatch, state])
+  
 
     return(
         <>
