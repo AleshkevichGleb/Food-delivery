@@ -20,7 +20,10 @@ const ProductsItems = () => {
     });
 
     useEffect(() => {
-        dispatch(calc_cart_count())
+        const storage = JSON.parse(localStorage.getItem('products'));
+        if(storage !== null) {
+            dispatch(calc_cart_count())
+        }
     }, [dispatch, state])
   
 

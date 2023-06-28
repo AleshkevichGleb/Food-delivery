@@ -15,12 +15,16 @@ import { calc_cart_count, decrease_cart_count } from "../../reduxToolkit/fullCar
 const Cart = memo(() => {
     const [basket, setBacket] = useState([]);
     const state = useSelector(state => state.productCountChange);
-    // const state = JSON.parse(localStorage.getItem('products'));
     const dispatch = useDispatch();
+    const products = useSelector(state => state.productCountChange)
     
     useEffect(() => {
         let editState = [];
         let storage = JSON.parse(localStorage.getItem('products'));
+        if(storage === null || !storage.length) {
+            localStorage.setItem('products', JSON.stringify(products))
+            storage = JSON.parse(localStorage.getItem('products'));
+        }
             
         storage.forEach(type => {
             const {link} = type;
@@ -31,7 +35,7 @@ const Cart = memo(() => {
 
         setBacket(editState);
         dispatch(calc_cart_count())
-    }, [dispatch, state])
+    }, [state, dispatch, basket])
 
     const removeFromBasket = ({currentTarget}) => {
         const {link} = basket.find(el => el.id === +currentTarget.id);

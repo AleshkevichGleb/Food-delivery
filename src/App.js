@@ -25,6 +25,14 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    const storage = JSON.parse(localStorage.getItem('products'));
+    if(storage === null || !storage.length ) {
+      localStorage.setItem('products', JSON.stringify(products))
+    }
+
+  }, [])
+
+  useEffect(() => {
     setIsPreloader(true);
 
     if(status === "idle") {
@@ -35,15 +43,10 @@ function App() {
       setIsPreloader(false)
     }
     if(status === 'succeeded') {
-      const storage = JSON.parse(localStorage.getItem('products'));
-      if(storage == null || !storage.length ) {
-        localStorage.setItem('products', JSON.stringify(products))
-      }
-
       setIsPreloader(false)
     }
 
-    dispatch(calc_cart_count());
+    // dispatch(calc_cart_count());
 
   }, [status, dispatch, products]);
 
