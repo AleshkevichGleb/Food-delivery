@@ -8,7 +8,7 @@ import { calc_cart_count } from "../../../../reduxToolkit/fullCartCountSlice";
 import { useEffect } from "react";
 
 const ProductsItems = () => {
-    const state = JSON.parse(localStorage.getItem('products'));
+    const state = useSelector(state => state.productCountChange);
     const dispatch = useDispatch();
     const {url} = useParams();
     

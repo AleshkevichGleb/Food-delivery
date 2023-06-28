@@ -21,16 +21,11 @@ function App() {
   const [isPreloader, setIsPreloader] = useState(false);
   const {status, weather, error} = useSelector(state => state.weather);
   const products = useSelector(state => state.productCountChange)
-  
- 
+
   const dispatch = useDispatch();
 
-  useEffect( () => {
+  useEffect(() => {
     setIsPreloader(true);
-    const storage = JSON.parse(localStorage.getItem('products'));
-    if(storage === null || !storage.length ) {
-      localStorage.setItem('products', JSON.stringify(products))
-    }
 
     if(status === "idle") {
       dispatch(getWeather()); 
@@ -40,11 +35,17 @@ function App() {
       setIsPreloader(false)
     }
     if(status === 'succeeded') {
+      const storage = JSON.parse(localStorage.getItem('products'));
+      if(storage == null || !storage.length ) {
+        localStorage.setItem('products', JSON.stringify(products))
+      }
+
       setIsPreloader(false)
     }
-    // console.log(localStorage.getItem('products'));
-    // dispatch(calc_cart_count())
-  }, [status, dispatch]);
+
+    dispatch(calc_cart_count());
+
+  }, [status, dispatch, products]);
 
   const {state: stateLocation} = useLocation();
 

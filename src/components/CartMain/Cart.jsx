@@ -15,6 +15,7 @@ import { calc_cart_count, decrease_cart_count } from "../../reduxToolkit/fullCar
 const Cart = memo(() => {
     const [basket, setBacket] = useState([]);
     const state = useSelector(state => state.productCountChange);
+    // const state = JSON.parse(localStorage.getItem('products'));
     const dispatch = useDispatch();
     
     useEffect(() => {
@@ -30,7 +31,7 @@ const Cart = memo(() => {
 
         setBacket(editState);
         dispatch(calc_cart_count())
-    }, [state, dispatch])
+    }, [dispatch, state])
 
     const removeFromBasket = ({currentTarget}) => {
         const {link} = basket.find(el => el.id === +currentTarget.id);

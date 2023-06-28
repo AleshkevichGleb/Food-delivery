@@ -22,7 +22,7 @@ const fullCartCountSlice = createSlice({
                     if(elem.cartCount > 0) {
                         count += elem.cartCount; 
                     }
-                }, 0)
+                })
             })
 
             state.count = count;

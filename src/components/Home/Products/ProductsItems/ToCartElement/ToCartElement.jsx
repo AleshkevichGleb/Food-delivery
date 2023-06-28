@@ -9,9 +9,6 @@ const ToCartElement = ({product, dispatch, category, addStyles, title, src, flag
     const {price, cartCount, cartPrice, id} = product;
     const [isVisible, setIsVisible] = useState(cartPrice >= price);
 
-    useEffect(() => {
-        dispatch(increase_cart_count())
-    }, [])
 
     const incrementCountOfProduct = ({currentTarget}) => {
         const product = {category: category, id: currentTarget.id}
