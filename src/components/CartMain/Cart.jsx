@@ -35,7 +35,7 @@ const Cart = memo(() => {
 
         setBacket(editState);
         dispatch(calc_cart_count())
-    }, [state, dispatch, basket])
+    }, [dispatch, state])
 
     const removeFromBasket = ({currentTarget}) => {
         const {link} = basket.find(el => el.id === +currentTarget.id);

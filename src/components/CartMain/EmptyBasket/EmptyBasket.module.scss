@@ -17,3 +17,21 @@
         text-align: center;
     }
 }
+
+@media(max-width: 625px) {
+    .container {
+        width: 95%;
+        margin: 0 10px;
+        
+        .image {
+            width: 80%;
+            height: auto;
+        }
+        .text {
+            color: #fff;
+            font-size: 28px;
+            font-weight: 700;
+            text-align: center;
+        }
+    }
+}
