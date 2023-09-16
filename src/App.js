@@ -51,7 +51,6 @@ function App() {
   }, [status, dispatch, products]);
 
   const {state: stateLocation} = useLocation();
-
   return (
     <>
           {isPreloader 

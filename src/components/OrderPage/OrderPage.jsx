@@ -101,11 +101,6 @@ const OrderPage = () => {
                         <TimeToDelivery data = {data} handleData={handleData} error = {error}/>
                         <Agrement data = {data} handleData = {handleData} setIsShowPopUp = {setIsShowPopUp} isDisabled = {isDisabled} setIsDisabled = {setIsDisabled}/>
                     </form>
-
-                    <pre style={{background:'#fff'}}>
-                        {JSON.stringify(data, null, 2)}
-                    </pre>
-
                 </div>
             </div>
         </div>
