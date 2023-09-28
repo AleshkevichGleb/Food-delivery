@@ -16,6 +16,7 @@ import Preloader from "./common/Preloader/Preloader";
 import { useDispatch, useSelector } from "react-redux";
 import { getWeather } from "./reduxToolkit/weatherSlice";
 import { calc_cart_count } from "./reduxToolkit/fullCartCountSlice";
+import { set_products_from_storage } from "./reduxToolkit/productSlice";
 
 function App() {
   const [isPreloader, setIsPreloader] = useState(false);
@@ -28,6 +29,8 @@ function App() {
     const storage = JSON.parse(localStorage.getItem('products'));
     if(storage === null || !storage.length ) {
       localStorage.setItem('products', JSON.stringify(products))
+    } else {
+       dispatch(set_products_from_storage(storage));
     }
 
   }, [])
@@ -45,8 +48,6 @@ function App() {
     if(status === 'succeeded') {
       setIsPreloader(false)
     }
-
-    // dispatch(calc_cart_count());
 
   }, [status, dispatch, products]);
 

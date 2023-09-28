@@ -56,8 +56,7 @@ const ProductsItems = () => {
                     </div>
                 )}
             </div>
-        </div>
-        {/* <OurCaffe/>  */}
+        </div>  
         </>
     )
 }

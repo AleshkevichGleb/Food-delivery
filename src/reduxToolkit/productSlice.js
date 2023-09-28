@@ -78,13 +78,21 @@ const productSlice = createSlice({
 
             localStorage.setItem('products', JSON.stringify(storage))
 
-        } 
+        },
+
+        set_products_from_storage: (state, action) => {
+            for(let i = 0; i < state.length; i++) {
+                for(let j = 0; j < action.payload.length; j++) {
+                    state[i] = action.payload[i]
+                }
+            }
+        }
       
     }
 })
 
 
-export const {increase_price, decrease_price, backup_count_to_null} = productSlice.actions;
+export const {increase_price, decrease_price, backup_count_to_null, set_products_from_storage} = productSlice.actions;
 
 
 export default productSlice.reducer;
