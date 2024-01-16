@@ -18,6 +18,8 @@ This is an online food delivery shop, where customers can order their favorite f
 - HTML/CSS
 - JavaScript
 
+### link: https://food-delivery-3c554.firebaseapp.com/
+
 ## Installation and Setup
 
 1. Clone the repository
